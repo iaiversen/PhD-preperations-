@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhD Preparation: Day and Night of Bipolar Disorder</title>
+<style>
+:root{--sb:#1a1a3e;--sb-t:#c5c6d0;--sb-a:#0d7377;--bg:#f5f6fa;--card:#fff;--t1:#1a1a2e;--t2:#555;--ac:#0d7377;--acl:#11999e;--gd:#d4a843;--gdl:#f0d080;--brd:#e0e0e0;--sh:0 2px 8px rgba(0,0,0,.07);--shh:0 4px 16px rgba(0,0,0,.12);--r:8px;--f:'Segoe UI',system-ui,-apple-system,sans-serif;--sw:260px;--ok:#27ae60;--no:#e74c3c;--wn:#f39c12;--in:#3498db}
+[data-theme="dark"]{--bg:#121225;--card:#1e1e3a;--t1:#e0e0ec;--t2:#a0a0b8;--brd:#2e2e4a;--sh:0 2px 8px rgba(0,0,0,.3);--shh:0 4px 16px rgba(0,0,0,.4)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--bg);color:var(--t1);display:flex;min-height:100vh;transition:background .3s,color .3s}
+a{color:var(--ac);text-decoration:none}a:hover{text-decoration:underline}
+.sidebar{width:var(--sw);min-height:100vh;background:var(--sb);color:var(--sb-t);display:flex;flex-direction:column;position:fixed;top:0;left:0;z-index:100;transition:transform .3s}
+.sidebar-header{padding:1.5rem 1.2rem 1rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.sidebar-header h2{color:#fff;font-size:1.05rem;line-height:1.3}
+.sidebar-header p{font-size:.78rem;color:var(--gd);margin-top:.3rem}
+.sidebar nav{flex:1;padding:.5rem 0;overflow-y:auto}
+.sidebar nav button{display:flex;align-items:center;gap:.7rem;width:100%;padding:.7rem 1.2rem;border:none;background:none;color:var(--sb-t);font-size:.88rem;cursor:pointer;text-align:left;transition:all .15s;font-family:var(--f)}
+.sidebar nav button:hover{background:rgba(255,255,255,.06);color:#fff}
+.sidebar nav button.active{background:var(--sb-a);color:#fff;border-left:3px solid var(--gd)}
+.sidebar nav button .ni{width:20px;text-align:center;font-size:1rem}
+.sidebar-footer{padding:1rem 1.2rem;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between}
+.dtog{background:rgba(255,255,255,.1);border:none;color:#fff;padding:.4rem .8rem;border-radius:20px;cursor:pointer;font-size:.82rem;font-family:var(--f)}
+.dtog:hover{background:rgba(255,255,255,.18)}
+.ham{display:none;position:fixed;top:.8rem;left:.8rem;z-index:200;background:var(--sb);color:#fff;border:none;padding:.5rem .7rem;border-radius:6px;font-size:1.3rem;cursor:pointer}
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90}
+.main{margin-left:var(--sw);flex:1;padding:2rem 2.5rem;max-width:1100px;min-height:100vh}
+.sec{display:none}.sec.active{display:block}
+.sec-t{font-size:1.6rem;font-weight:700;margin-bottom:.3rem}
+.sec-st{color:var(--t2);margin-bottom:1.5rem;font-size:.95rem}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:1.5rem;margin-bottom:1.2rem;transition:box-shadow .2s,background .3s;border:1px solid var(--brd)}
+.card:hover{box-shadow:var(--shh)}
+.card h3{font-size:1.1rem;margin-bottom:.5rem}
+.card p{color:var(--t2);font-size:.9rem;line-height:1.6}
+.g2{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.pb{background:var(--brd);border-radius:10px;height:10px;overflow:hidden;margin-top:.5rem}
+.pb .fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--ac),var(--acl));transition:width .4s}
+.pb .fill.gold{background:linear-gradient(90deg,var(--gd),var(--gdl))}
+.pbl{font-size:.8rem;color:var(--t2);margin-top:.25rem}
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--brd);margin-bottom:1.5rem;flex-wrap:wrap}
+.tab-btn{padding:.6rem 1.2rem;border:none;background:none;font-size:.9rem;font-family:var(--f);cursor:pointer;color:var(--t2);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .15s}
+.tab-btn:hover{color:var(--ac)}
+.tab-btn.active{color:var(--ac);border-bottom-color:var(--ac);font-weight:600}
+.tp{display:none}.tp.active{display:block}
+.lc h4{color:var(--ac);font-size:1.05rem;margin:1.3rem 0 .5rem}.lc h4:first-child{margin-top:0}
+.lc p{line-height:1.75;margin-bottom:.8rem;color:var(--t2);font-size:.92rem}
+.lc strong{color:var(--t1)}
+.ri{display:flex;align-items:flex-start;gap:.8rem;padding:.8rem 0;border-bottom:1px solid var(--brd)}
+.ri:last-child{border-bottom:none}
+.ri input[type="checkbox"]{margin-top:.25rem;accent-color:var(--ac);width:18px;height:18px;cursor:pointer;flex-shrink:0}
+.ri label{cursor:pointer;flex:1}
+.ri .rt{font-weight:600;color:var(--t1);font-size:.92rem}
+.ri .rd{font-size:.82rem;color:var(--t2);margin-top:.15rem;display:block}
+.ri input:checked+label .rt{text-decoration:line-through;opacity:.6}
+.ri input:checked+label .rd{opacity:.5}
+.fc-c{display:flex;flex-direction:column;align-items:center}
+.fc{width:100%;max-width:560px;min-height:220px;perspective:1000px;cursor:pointer;margin:1rem 0}
+.fc-i{position:relative;width:100%;min-height:220px;transition:transform .5s;transform-style:preserve-3d}
+.fc.flipped .fc-i{transform:rotateY(180deg)}
+.fc-f,.fc-b{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--r);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2rem;text-align:center;border:2px solid var(--brd)}
+.fc-f{background:var(--card)}
+.fc-b{background:linear-gradient(135deg,var(--ac),var(--acl));color:#fff;transform:rotateY(180deg)}
+.fc-f h4{font-size:1.15rem;color:var(--t1)}
+.fc-f .fh{font-size:.78rem;color:var(--t2);margin-top:.8rem}
+.fc-b p{font-size:.95rem;line-height:1.6}
+.fc-n{display:flex;align-items:center;gap:1rem;margin-top:.5rem}
+.fc-n button{padding:.4rem 1rem;border:1px solid var(--brd);border-radius:6px;background:var(--card);color:var(--t1);cursor:pointer;font-family:var(--f);font-size:.88rem;transition:all .15s}
+.fc-n button:hover{border-color:var(--ac);color:var(--ac)}
+.fc-ct{font-size:.88rem;color:var(--t2)}
+.fc-m{display:flex;gap:.8rem;margin-top:.8rem}
+.fc-m button{padding:.35rem .9rem;border-radius:6px;border:none;cursor:pointer;font-family:var(--f);font-size:.82rem;color:#fff}
+.btn-k{background:var(--ok)}.btn-u{background:var(--no)}
+.qq{margin-bottom:1.5rem}
+.qq h4{font-size:.98rem;margin-bottom:.7rem;color:var(--t1)}
+.qo{display:block;padding:.6rem .9rem;margin:.3rem 0;border:1px solid var(--brd);border-radius:6px;cursor:pointer;font-size:.9rem;transition:all .15s;background:var(--card)}
+.qo:hover{border-color:var(--ac)}
+.qo.sel{border-color:var(--ac);background:rgba(13,115,119,.08)}
+.qo.ok{border-color:var(--ok);background:rgba(39,174,96,.1);pointer-events:none}
+.qo.wr{border-color:var(--no);background:rgba(231,76,60,.1);pointer-events:none}
+.qo.dis{pointer-events:none}
+.qx{display:none;padding:.7rem 1rem;margin-top:.4rem;background:rgba(13,115,119,.05);border-left:3px solid var(--ac);border-radius:0 6px 6px 0;font-size:.85rem;color:var(--t2);line-height:1.5}
+.qx.show{display:block}
+.qa{margin-top:1rem;display:flex;gap:.8rem;align-items:center}
+.qs{font-size:1rem;font-weight:600;color:var(--ac)}
+.btn{padding:.5rem 1.2rem;border:none;border-radius:6px;cursor:pointer;font-family:var(--f);font-size:.88rem;transition:all .15s}
+.btn-p{background:var(--ac);color:#fff}.btn-p:hover{background:var(--acl)}
+.btn-g{background:var(--gd);color:#fff}.btn-g:hover{background:var(--gdl);color:var(--t1)}
+.btn-o{background:none;border:1px solid var(--brd);color:var(--t1)}.btn-o:hover{border-color:var(--ac);color:var(--ac)}
+.dh{background:linear-gradient(135deg,var(--sb),#2a2a5e);color:#fff;border-radius:var(--r);padding:2rem;margin-bottom:1.5rem}
+.dh h1{font-size:1.5rem;margin-bottom:.3rem}
+.dh p{color:rgba(255,255,255,.75);font-size:.92rem;line-height:1.6}
+.tc{cursor:pointer;transition:transform .15s,box-shadow .2s}
+.tc:hover{transform:translateY(-2px)}
+.tc .ti{font-size:1.5rem;margin-bottom:.5rem}
+.tc .st{font-size:.82rem;color:var(--t2);margin-top:.3rem}
+.ml label{display:flex;align-items:center;gap:.6rem;padding:.45rem 0;font-size:.88rem;cursor:pointer}
+.ml input{accent-color:var(--gd);width:16px;height:16px}
+.sc{border-left:3px solid var(--ac)}
+.sc h3 .sn{color:var(--gd);margin-right:.3rem}
+.cb{background:#1e1e3a;color:#a0e0a0;padding:.8rem 1rem;border-radius:6px;font-family:'Consolas','Fira Code',monospace;font-size:.84rem;overflow-x:auto;margin:.5rem 0}
+[data-theme="dark"] .cb{background:#0a0a1a}
+.kq{background:rgba(212,168,67,.08);border-left:3px solid var(--gd);padding:.6rem 1rem;margin:.4rem 0;border-radius:0 6px 6px 0;font-size:.88rem}
+.ptr{display:flex;align-items:center;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--brd)}.ptr:last-child{border-bottom:none}
+.ptn{width:160px;font-weight:600;font-size:.9rem}
+.ptb{flex:1}
+.pm{display:flex;align-items:center;gap:.5rem;margin:.15rem 0;font-size:.78rem;color:var(--t2)}
+.pm .pb{flex:1;height:6px}
+.ss{text-align:center}.ss .num{font-size:2rem;font-weight:700;color:var(--ac)}.ss .lbl{font-size:.82rem;color:var(--t2)}
+@media print{.sidebar,.ham,.ov,.tabs,.fc-c,.qq,.dtog{display:none!important}.main{margin-left:0;padding:1rem}.card{box-shadow:none;border:1px solid #ccc;break-inside:avoid}.sec{display:block!important}}
+@media(max-width:800px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.ham{display:block}.ov.show{display:block}.main{margin-left:0;padding:1rem}.g2,.g3{grid-template-columns:1fr}.dh h1{font-size:1.2rem}.fc{max-width:100%}}
+</style>
+</head>
+<body>
+<button class="ham" onclick="document.querySelector('.sidebar').classList.toggle('open');document.querySelector('.ov').classList.toggle('show')">&#9776;</button>
+<div class="ov" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('show')"></div>
+<aside class="sidebar">
+<div class="sidebar-header">
+<h2>PhD Preparation</h2>
+<p>Day and Night of Bipolar Disorder</p>
+</div>
+<nav id="nav"></nav>
+<div class="sidebar-footer">
+<span style="font-size:.78rem">Ingebj&oslash;rg</span>
+<button class="dtog" id="dtog" onclick="toggleDark()">Dark Mode</button>
+</div>
+</aside>
+<div class="main" id="main"></div>
+
+<script>
+/* ===== DATA ===== */
+const NAV=[
+{id:'dashboard',icon:'\u2302',label:'Dashboard'},
+{id:'bipolar',icon:'\u2695',label:'Bipolar Disorder'},
+{id:'actigraphy',icon:'\u231A',label:'Actigraphy'},
+{id:'circadian',icon:'\u263C',label:'Circadian Rhythm'},
+{id:'sleep',icon:'\u263E',label:'Sleep Patterns'},
+{id:'psychosis',icon:'\u29B0',label:'Psychosis'},
+{id:'stats',icon:'\u03A3',label:'Statistics & Methods'},
+{id:'toolkit',icon:'\u2692',label:'Data Analysis Toolkit'},
+{id:'progress',icon:'\u2713',label:'Progress'}
+];
+
+const THEMES={
+bipolar:{
+title:'Bipolar Disorder',
+subtitle:'Episodic mood disorder: mania, depression, and everything between',
+learn:`<h4>What is Bipolar Disorder?</h4>
+<p>Bipolar disorder (BD) is a chronic, episodic mood disorder characterized by recurrent episodes of mania or hypomania and depression, interspersed with periods of relatively stable mood known as euthymia. It is among the most heritable and disabling psychiatric conditions, with a lifetime prevalence of approximately 1-2% globally. The onset typically occurs in late adolescence or early adulthood (median age 20-25 years), though diagnosis is often delayed by 5-10 years due to diagnostic complexity. BD exists on a spectrum: <strong>Bipolar I disorder</strong> requires at least one lifetime manic episode (with or without depressive episodes), <strong>Bipolar II disorder</strong> requires at least one hypomanic episode and at least one major depressive episode (but no full manic episodes), and <strong>cyclothymic disorder</strong> involves chronic fluctuating mood with numerous hypomanic and depressive periods that do not meet full episode criteria, lasting at least 2 years.</p>
+
+<h4>Diagnostic Criteria (DSM-5)</h4>
+<p>A <strong>manic episode</strong> requires a distinct period of abnormally and persistently elevated, expansive, or irritable mood AND increased energy or goal-directed activity, lasting at least 7 days (or any duration if hospitalization is necessary). During this period, three or more of the following must be present (four if mood is only irritable): inflated self-esteem or grandiosity, decreased need for sleep, more talkative than usual or pressure to keep talking, flight of ideas or racing thoughts, distractibility, increased goal-directed activity or psychomotor agitation, excessive involvement in activities with high potential for painful consequences. A <strong>hypomanic episode</strong> has the same symptom criteria but lasts at least 4 days, does not cause marked impairment, does not include psychotic features, and does not necessitate hospitalization. A <strong>major depressive episode</strong> requires five or more symptoms over 2 weeks, including depressed mood or anhedonia. The <strong>mixed features specifier</strong> in DSM-5 applies when a mood episode includes at least three symptoms of the opposite polarity occurring simultaneously, which carries higher suicide risk and treatment complexity.</p>
+
+<h4>Course of Illness</h4>
+<p>BD typically follows an episodic course with euthymic intervals, although residual symptoms between episodes are common. The <strong>neuroprogression hypothesis</strong> (Post, 2007) suggests that the illness becomes more severe over time: episodes become more frequent, more severe, and more treatment-resistant with each recurrence. The related <strong>kindling model</strong> proposes that early mood episodes require environmental triggers (stressors, sleep disruption), but with repeated episodes, the threshold for triggering new episodes progressively lowers until episodes become spontaneous. This has important implications for early intervention. Progressive cognitive decline is observed in a subset of patients, particularly affecting executive function, verbal memory, and processing speed. However, neuroprogression is not universal, and identifying patients at risk for a deteriorating course remains an active research question.</p>
+
+<h4>Pathophysiology</h4>
+<p>BD has one of the highest heritability estimates in psychiatry, approximately <strong>70-85%</strong> based on twin studies, making it strongly genetic. However, the genetic architecture is highly polygenic, with hundreds of common variants each contributing small effects. Notably, <strong>circadian clock gene variants</strong> (CLOCK, PER3, CRY1) have been recurrently implicated. At the neurobiological level, dysregulation of the <strong>dopaminergic system</strong> is central: dopaminergic hyperactivity underlies mania (consistent with the therapeutic efficacy of antipsychotics), while dopaminergic hypoactivity contributes to depression. <strong>Mitochondrial dysfunction</strong> is increasingly recognized, with impairments in oxidative phosphorylation and cellular energy metabolism. <strong>Neuroinflammation</strong> is evident from elevated pro-inflammatory cytokines (IL-6, TNF-alpha, CRP) during mood episodes and even euthymia. Dysregulation of the <strong>hypothalamic-pituitary-adrenal (HPA) axis</strong> leads to elevated cortisol, which may mediate hippocampal volume reductions observed in neuroimaging studies.</p>
+
+<h4>Knowledge Gaps</h4>
+<p>Several fundamental questions remain. Why do some patients develop <strong>rapid cycling</strong> (four or more episodes per year) while others have long stable intervals? What are the reliable <strong>predictors of episode onset</strong> that could enable early intervention? How do we account for <strong>individual differences in trajectory</strong>: some patients show neuroprogression while others maintain stable functioning? A particularly important question for this PhD is the role of <strong>circadian disruption as cause versus consequence</strong>. While circadian abnormalities are well-documented in BD, it remains unclear whether circadian disruption drives mood episodes, mood episodes disrupt circadian function, or whether a bidirectional relationship exists, and these relationships may differ across individuals. <strong>Personalizing treatment</strong> remains a major unmet need: current approaches are largely trial-and-error.</p>
+
+<h4>Current Research Directions</h4>
+<p>The field is moving rapidly toward <strong>digital phenotyping</strong>, using passively collected smartphone and wearable data to continuously monitor behavioral patterns. <strong>Actigraphy monitoring</strong> provides objective measures of activity and sleep in naturalistic settings, enabling detection of circadian disruption before, during, and after mood episodes. <strong>Machine learning approaches</strong> are being applied to predict episode onset from digital data streams, with promising early results. <strong>Chronotherapy</strong> (including light therapy, dark therapy, and sleep phase interventions) is gaining evidence as an adjunctive treatment. The broader goal of <strong>precision psychiatry</strong> aims to use biological, behavioral, and clinical data to match individual patients with optimal treatments and monitoring strategies.</p>`,
+
+readings:[
+{id:'bd1',ref:'Grande et al. (2016). Bipolar disorder. <em>The Lancet</em>.',desc:'Comprehensive clinical review of BD'},
+{id:'bd2',ref:'Vieta et al. (2018). Bipolar disorders. <em>Nature Reviews Disease Primers</em>.',desc:'Authoritative disease primer'},
+{id:'bd3',ref:'McIntyre et al. (2020). Bipolar disorders. <em>The Lancet</em>.',desc:'Updated seminar on diagnosis and management'},
+{id:'bd4',ref:'Phillips & Kupfer (2013). Bipolar disorder diagnosis: challenges and future directions. <em>The Lancet</em>.',desc:'Diagnostic challenges'},
+{id:'bd5',ref:'Craddock & Sklar (2013). Genetics of bipolar disorder. <em>The Lancet</em>.',desc:'Genetic architecture review'},
+{id:'bd6',ref:'Post (2007). Kindling and sensitization as models for affective episode recurrence. <em>Neuroscience & Biobehavioral Reviews</em>.',desc:'Neuroprogression theory'},
+{id:'bd7',ref:'Goodwin & Jamison (2007). Manic-Depressive Illness. <em>Oxford University Press</em>.',desc:'The definitive textbook (read chapters 1-4)'},
+
+{id:'bd_h1',ref:'Hoegh MC et al. (2025). The MinDag app for symptom monitoring and feedback to patients and clinicians during the initial treatment of bipolar disorder -- a feasibility study. <em>International Journal of Bipolar Disorders</em>, 13(1):14.',desc:'[Supervisor: Hoegh] First-author feasibility study of the MinDag smartphone app for daily symptom monitoring in bipolar disorder'},
+{id:'bd_h2',ref:'Bjella TD, Hoegh MC et al. (2022). Developing "MinDag" -- an app to capture symptom variation and illness mechanisms in bipolar disorder. <em>Frontiers in Medical Technology</em>, 4:910533.',desc:'[Supervisor: Hoegh] Development paper for the MinDag EMA app -- covers design, content modules (mood, sleep, functioning, substance use, psychotic symptoms)'},
+{id:'bd_h3',ref:'Hoegh MC et al. (2020). Affective lability across psychosis spectrum disorders. <em>European Psychiatry</em>, 63(1):e53.',desc:'[Supervisor: Hoegh] Affective lability elevated in both schizophrenia and bipolar disorder -- equally high in both groups'},
+{id:'bd_h4',ref:'Hoegh MC et al. (2021). Characterization of affective lability across subgroups of psychosis spectrum disorders. <em>International Journal of Bipolar Disorders</em>, 9:34.',desc:'[Supervisor: Hoegh] Fine-grained analysis of affective lability patterns across BD-I, BD-II, schizoaffective, and schizophrenia'},
+{id:'bd_h5',ref:'Hoegh MC et al. (2022). Affective lability and social functioning in severe mental disorders. <em>European Archives of Psychiatry and Clinical Neuroscience</em>, 272(5):873-885.',desc:'[Supervisor: Hoegh] Higher affective lability linked to lower social functioning across psychosis spectrum disorders'},
+{id:'bd_h6',ref:'Glastad SH, Klungsoyr O, ... Hoegh MC, Lagerberg TV (2025). Exploring the temporal relationship between mood, alcohol- and nicotine use in bipolar disorder using time-series analyses. <em>International Journal of Bipolar Disorders</em>, 13(1):18.',desc:'[Supervisors: Hoegh & Lagerberg] Uses MinDag data with VAR models and Granger causality to examine mood-substance temporal dynamics'},
+
+{id:'bd_os1',ref:'Leonardsen EH, ... Sorensen O, ... Westlye LT et al. (2022). Deep neural networks learn general and clinically relevant representations of the ageing brain. <em>NeuroImage</em>, 256:119210.',desc:'[Supervisor: Sorensen] Brain age prediction across disorders including mood disorders (bipolar + depression) -- demonstrates Sorensen\'s statistical/ML expertise applied to psychiatric neuroimaging'},
+
+{id:'bd_tl1',ref:'Lagerberg TV et al. (2021). Substance Misuse Trajectories and Risk of Relapse in the Early Course of Bipolar Disorder. <em>Frontiers in Psychiatry</em>, 12:656912.',desc:'[Supervisor: Lagerberg] Continuing alcohol misuse predicts affective relapse in first-treatment bipolar patients'},
+{id:'bd_tl2',ref:'Lagerberg TV et al. (2014). Indications of a dose-response relationship between cannabis use and age at onset in bipolar disorder. <em>Psychiatry Research</em>, 215(1):101-104.',desc:'[Supervisor: Lagerberg] Cannabis use associated with earlier onset of bipolar disorder in a dose-dependent manner'},
+{id:'bd_tl3',ref:'Lagerberg TV et al. (2017). Alcohol use disorders are associated with increased affective lability in bipolar disorder. <em>Journal of Affective Disorders</em>, 208:316-324.',desc:'[Supervisor: Lagerberg] Cross-national study showing alcohol use disorders linked to increased inter-episodic mood instability'},
+{id:'bd_tl4',ref:'Manchia M, Vieta E, ... Lagerberg TV, ... Andreassen OA (2020). Translating big data to better treatment in bipolar disorder -- a manifesto for coordinated action. <em>European Neuropsychopharmacology</em>, 36:121-136.',desc:'[Supervisor: Lagerberg] ECNP consensus on using digital health, big data, and precision psychiatry for bipolar treatment'},
+{id:'bd_tl5',ref:'Glastad SH, ... Hoegh MC, ... Lagerberg TV (2023). Nicotine use and non-pathological alcohol use and their relationship to affective symptoms and sleep disturbances in bipolar disorder. <em>Journal of Affective Disorders</em>, 327:236-243.',desc:'[Supervisors: Hoegh & Lagerberg] Elevated insomnia risk with medium/high nicotine use in bipolar disorder -- connects substance use to sleep disruption'},
+{id:'bd_tl6',ref:'Engen MJ, Lyngstad SH, ... Hoegh MC, Lagerberg TV, Aminoff SR (2025). A mixed methods pilot feasibility study of the unified protocol group psychotherapy for early bipolar disorder. <em>Frontiers in Psychiatry</em>, 16:1524243.',desc:'[Supervisors: Hoegh & Lagerberg] Transdiagnostic group therapy for early bipolar disorder -- 0% attrition, large effect sizes'}
+],
+
+flashcards:[
+{front:'Bipolar I Disorder',back:'At least one manic episode (>=7 days or hospitalization). May include depressive and hypomanic episodes. Psychotic features possible.'},
+{front:'Bipolar II Disorder',back:'At least one hypomanic episode (>=4 days) AND at least one major depressive episode. No full manic episodes. Often misdiagnosed as unipolar depression.'},
+{front:'Hypomania vs Mania',back:'Hypomania: elevated mood/energy >=4 days, no psychosis, no hospitalization, functioning maintained. Mania: >=7 days, may include psychosis, marked impairment.'},
+{front:'Mixed Features',back:'Simultaneous manic/hypomanic AND depressive symptoms. DSM-5 specifier. Higher suicide risk. Common in BD.'},
+{front:'Rapid Cycling',back:'Four or more mood episodes per year. Occurs in ~15-20% of BD patients. Associated with worse prognosis, thyroid dysfunction, female sex.'},
+{front:'Euthymia',back:'Period between mood episodes with relatively stable mood. Not necessarily symptom-free -- residual cognitive and sleep issues common.'},
+{front:'Neuroprogression',back:'Hypothesis that BD becomes more severe over time with recurring episodes. Earlier treatment may prevent progression. Supported by neuroimaging showing progressive changes.'},
+{front:'Kindling Model',back:'Theory that initial episodes require environmental triggers, but repeated episodes lower the threshold, eventually becoming spontaneous. Analogous to seizure kindling.'},
+{front:'Prodromal Symptoms',back:'Early warning signs before a full mood episode. Sleep disturbance is one of the most reliable prodromes for mania. Identifying prodromes enables early intervention.'},
+{front:'Circadian Vulnerability in BD',back:'Clock gene variants (CLOCK, PER, CRY) are associated with BD. Circadian disruption may be both a trait vulnerability and a state marker.'}
+],
+
+quiz:[
+{q:'What is the minimum duration of a manic episode according to DSM-5?',opts:['3 days','5 days','7 days (or any duration if hospitalized)','14 days'],correct:2,expl:'DSM-5 requires >=7 days of persistently elevated/irritable mood and increased energy, unless hospitalization is required, in which case any duration suffices.'},
+{q:'Which feature distinguishes BD-I from BD-II?',opts:['Presence of depression','Presence of at least one full manic episode','Earlier age of onset','Family history'],correct:1,expl:'BD-I requires at least one manic episode. BD-II requires hypomania + depression but NO full manic episodes.'},
+{q:'What does the neuroprogression hypothesis predict?',opts:['BD improves naturally over time','Each mood episode increases vulnerability to future episodes','Medication causes brain changes','BD is a neurodevelopmental disorder'],correct:1,expl:'Neuroprogression suggests repeated episodes cause cumulative neural damage, lowering the threshold for future episodes.'},
+{q:'Which is the most reliable prodromal symptom of mania?',opts:['Increased appetite','Social withdrawal','Sleep disturbance','Memory problems'],correct:2,expl:'Reduced need for sleep is both a DSM criterion and one of the earliest and most reliable warning signs of an impending manic episode.'},
+{q:'Heritability of bipolar disorder is approximately:',opts:['20-30%','40-50%','60-70%','70-85%'],correct:3,expl:'Twin studies estimate heritability at ~70-85%, making BD one of the most heritable psychiatric disorders. However, it is highly polygenic.'},
+{q:'What is a mixed features specifier?',opts:['Having BD-I and BD-II simultaneously','Meeting criteria for both manic/hypomanic AND depressive symptoms concurrently','Experiencing rapid cycling','Having comorbid anxiety'],correct:1,expl:'DSM-5 mixed features specifier applies when a mood episode includes symptoms of the opposite pole.'}
+]
+},
+
+actigraphy:{
+title:'Actigraphy',
+subtitle:'Objective, continuous measurement of rest-activity patterns',
+learn:`<h4>What is Actigraphy?</h4>
+<p>Actigraphy is a non-invasive method of monitoring human rest-activity cycles using a small, <strong>wrist-worn accelerometer</strong> that continuously records movement. Modern actigraphs use <strong>MEMS (micro-electromechanical systems) accelerometers</strong> or piezoelectric sensors that detect acceleration in three axes (x, y, z), recorded in units of gravitational force (g). Commonly used research-grade devices include the <strong>GENEActiv</strong>, <strong>ActiGraph wGT3X-BT</strong>, and <strong>Axivity AX3</strong>. These devices can record continuously for days to months on a single battery charge, storing data at sampling rates typically ranging from 25-100 Hz. The raw data is then processed into epoch-level summaries (typically 5-second to 1-minute epochs) for analysis. Actigraphy is the primary objective measurement tool in this PhD project, providing continuous behavioral data from approximately 70 bipolar disorder patients over extended periods.</p>
+
+<h4>Processing with GGIR</h4>
+<p>The <strong>GGIR R package</strong> (van Hees et al.) has become the standard open-source tool for processing raw accelerometry data in research. GGIR implements a comprehensive pipeline with five parts: <strong>Part 1</strong> handles data loading, auto-calibration (correcting sensor drift using gravity as reference), and extraction of acceleration metrics (primarily ENMO -- Euclidean Norm Minus One). <strong>Part 2</strong> detects waking hours and classifies sustained inactive bouts. <strong>Part 3</strong> performs sleep detection using the <strong>angle change algorithm</strong>, which identifies sleep as periods when the wrist angle remains relatively stable (the z-angle changes less than 5 degrees over 5-minute windows). <strong>Part 4</strong> labels time windows for day and night and computes cosinor and non-parametric circadian rhythm variables including L5, M10, IS, and IV. <strong>Part 5</strong> combines outputs from all preceding parts and generates person-level summary statistics. GGIR also handles non-wear detection (identifying periods when the device was removed) and provides extensive quality control metrics.</p>
+
+<h4>Key Sleep Variables from Actigraphy</h4>
+<p><strong>Total Sleep Time (TST)</strong> is the total duration of sleep within the sleep period, derived by subtracting wake time from the sleep period duration. <strong>Wake After Sleep Onset (WASO)</strong> is the total minutes spent awake after initially falling asleep, reflecting sleep fragmentation. <strong>Sleep Efficiency (SE)</strong> is the ratio of TST to time in bed, expressed as a percentage (SE = TST / TIB x 100); values above 85% are generally considered good. <strong>Sleep Onset Latency (SOL)</strong> is the time from lights-out to sleep onset; prolonged SOL (>30 minutes) indicates difficulty falling asleep. The <strong>Sleep Regularity Index (SRI)</strong> measures day-to-day consistency of sleep-wake timing across the recording period.</p>
+
+<h4>Key Circadian and Activity Variables</h4>
+<p><strong>Interdaily Stability (IS)</strong> quantifies the regularity of the 24-hour activity pattern across days, ranging from 0 (gaussian noise) to 1 (perfect 24-hour rhythm repeated daily). <strong>Intradaily Variability (IV)</strong> measures fragmentation of activity within a 24-hour period, ranging from 0 (perfect sine wave) to 2+ (highly fragmented). <strong>L5</strong> is the average activity during the least active 5-hour period (proxy for nighttime rest quality), while <strong>M10</strong> is the average activity during the most active 10-hour period (proxy for daytime activity level). The timing of L5 and M10 provides information about circadian phase. <strong>Relative Amplitude (RA)</strong> is calculated as (M10 - L5) / (M10 + L5), ranging from 0 to 1, where higher values indicate stronger day-night contrast in activity. Reduced RA in bipolar disorder indicates a blunted circadian rhythm.</p>
+
+<h4>What Actigraphy Can and Cannot Tell Us</h4>
+<p>Actigraphy <strong>CAN</strong> provide objective, continuous behavioral data in naturalistic settings over extended periods, estimate sleep timing and duration with reasonable accuracy, quantify circadian rhythm parameters, and detect changes in rest-activity patterns associated with mood episodes. It is ecologically valid, non-intrusive, and scalable. However, actigraphy <strong>CANNOT</strong> distinguish between sleep stages (REM, NREM), perfectly differentiate quiet wakefulness from sleep (leading to overestimation of sleep in some cases), replace polysomnography (PSG) for clinical sleep disorder diagnosis, or measure subjective sleep quality. Compared to <strong>PSG</strong> (the gold standard for sleep assessment, which uses EEG, EOG, and EMG to score sleep stages), actigraphy trades precision for ecological validity and duration -- PSG is typically limited to 1-2 nights in a laboratory setting, while actigraphy provides months of real-world data.</p>`,
+
+readings:[
+{id:'ac1',ref:'Ancoli-Israel et al. (2003). The role of actigraphy in the study of sleep and circadian rhythms. <em>Sleep</em>.',desc:'Foundational review of actigraphy methodology'},
+{id:'ac2',ref:'Sadeh (2011). The role and validity of actigraphy in sleep medicine: An update. <em>Sleep Medicine Reviews</em>.',desc:'Validation and limitations of actigraphy'},
+{id:'ac3',ref:'van Hees et al. (2015). Separating movement and gravity components in an acceleration signal. <em>PLoS ONE</em>.',desc:'Technical foundation of GGIR processing'},
+{id:'ac4',ref:'Migueles et al. (2019). GGIR: A research community-driven open source R package. <em>JMPB</em>.',desc:'Practical guide to GGIR'},
+{id:'ac5',ref:'De Crescenzo et al. (2017). Actigraphic features of bipolar disorder: A systematic review. <em>Sleep Medicine Reviews</em>.',desc:'Actigraphy findings specifically in BD'},
+{id:'ac6',ref:'Scott et al. (2017). Activation in bipolar disorders: A systematic review. <em>JAMA Psychiatry</em>.',desc:'Actigraphy-measured activity in BD'},
+{id:'ac7',ref:'Fekedulegn et al. (2020). Actigraphy-based assessment of sleep parameters. <em>Annals of Work Exposures and Health</em>.',desc:'Comprehensive review of sleep parameter extraction'}
+],
+
+flashcards:[
+{front:'Actigraphy',back:'Wrist-worn accelerometer that continuously records movement (acceleration in g-force). Used to infer sleep/wake patterns, physical activity, and circadian rhythms in naturalistic settings over days to months.'},
+{front:'GGIR',back:'Open-source R package for processing raw accelerometry data. Handles auto-calibration, non-wear detection, sleep detection (angle change algorithm), and computes sleep and activity metrics. Standard tool in the field.'},
+{front:'Total Sleep Time (TST)',back:'Total duration of sleep within the sleep period. Derived from actigraphy by subtracting WASO from sleep period time (SPT). Typical healthy adult: 7-9 hours.'},
+{front:'WASO',back:'Wake After Sleep Onset. Total minutes spent awake after initially falling asleep. Higher WASO indicates more fragmented/disrupted sleep. Elevated in BD even during euthymia.'},
+{front:'Sleep Efficiency (SE)',back:'Ratio of total sleep time to time in bed, expressed as percentage. SE = TST / TIB x 100. Good: >85%. Low SE indicates difficulty sleeping despite being in bed.'},
+{front:'Interdaily Stability (IS)',back:'Measures regularity of the 24-hour activity pattern across days. Range 0-1. Higher = more regular day-to-day rhythm. Low IS in BD suggests unstable circadian routine.'},
+{front:'Intradaily Variability (IV)',back:'Measures fragmentation of activity within a 24-hour period. Range 0-2+. Higher = more fragmented (frequent transitions between rest and activity). Elevated IV in BD suggests disrupted activity patterns.'},
+{front:'Relative Amplitude (RA)',back:'RA = (M10 - L5) / (M10 + L5). Measures contrast between most active 10h and least active 5h. Range 0-1. Higher = stronger rhythm amplitude. Reduced RA in BD indicates blunted day-night contrast.'},
+{front:'L5 and M10',back:'L5: average activity during least active 5 hours (proxy for nighttime rest quality). M10: average activity during most active 10 hours (proxy for daytime activity level). Timing of L5/M10 indicates phase of rhythm.'},
+{front:'Actigraphy vs Polysomnography',back:'PSG is gold standard for sleep staging (EEG, EOG, EMG), but limited to lab settings and 1-2 nights. Actigraphy provides weeks/months of data in natural settings but cannot distinguish sleep stages or differentiate quiet wakefulness from sleep.'}
+],
+
+quiz:[
+{q:'What does GGIR use to detect sleep onset?',opts:['Heart rate variability','Angle change of the wrist','Movement frequency analysis','Skin temperature'],correct:1,expl:'GGIR uses the angle-change algorithm -- when wrist angle remains relatively stable, it infers the person is lying still (sleeping).'},
+{q:'Sleep efficiency of 72% indicates:',opts:['Excellent sleep','Normal sleep','Mildly disrupted sleep','Significantly disrupted sleep'],correct:3,expl:'SE >85% is considered good. 72% means the person is awake for 28% of their time in bed, indicating significant sleep disruption.'},
+{q:'What does high intradaily variability (IV) indicate?',opts:['Very regular daily patterns','Fragmented activity patterns with frequent rest-activity transitions','Strong circadian rhythm','Good sleep quality'],correct:1,expl:'High IV means frequent transitions between rest and activity within a day -- a fragmented, disrupted pattern rather than clear active/rest blocks.'},
+{q:'A relative amplitude (RA) close to 0 suggests:',opts:['Strong day-night rhythm','Minimal difference between daytime activity and nighttime rest','Excellent sleep efficiency','High physical fitness'],correct:1,expl:'RA near 0 means M10 and L5 are similar -- the person is similarly active day and night, indicating a severely blunted or absent circadian rhythm.'},
+{q:'What is a key limitation of actigraphy compared to PSG?',opts:['Cannot be used in natural settings','Cannot record for more than 24 hours','Cannot distinguish sleep stages (REM, NREM)','Requires clinical supervision'],correct:2,expl:'Actigraphy infers sleep/wake from movement but cannot detect brain wave patterns needed to identify sleep stages.'}
+]
+},
+
+circadian:{
+title:'Circadian Rhythm',
+subtitle:'The internal clock and its disruption in bipolar disorder',
+learn:`<h4>The Circadian System</h4>
+<p>The circadian system is an endogenous biological timekeeping mechanism that generates approximately 24-hour (circadian, from Latin "circa diem" -- about a day) rhythms in physiology and behavior. The master pacemaker is the <strong>suprachiasmatic nucleus (SCN)</strong>, a bilateral structure of approximately 20,000 neurons located in the anterior hypothalamus, directly above the optic chiasm. The SCN receives direct light input via the retinohypothalamic tract from intrinsically photosensitive retinal ganglion cells (ipRGCs) that contain the photopigment melanopsin. The SCN coordinates peripheral clocks found in virtually every cell in the body, ensuring that physiological processes are optimally timed relative to the external light-dark cycle.</p>
+
+<h4>Molecular Clock Mechanism</h4>
+<p>At the molecular level, circadian rhythms are generated by interlocking <strong>transcription-translation feedback loops (TTFLs)</strong>. In the core loop, the transcription factors <strong>CLOCK and BMAL1</strong> heterodimerize and activate transcription of <strong>Period (PER1, PER2, PER3)</strong> and <strong>Cryptochrome (CRY1, CRY2)</strong> genes. PER and CRY proteins accumulate in the cytoplasm, form complexes, translocate back to the nucleus, and inhibit CLOCK/BMAL1 activity, thereby suppressing their own transcription. This cycle takes approximately 24 hours. Additional regulatory loops involving REV-ERB and ROR nuclear receptors provide further precision. Importantly, variants in these clock genes -- particularly the <strong>CLOCK 3111T/C polymorphism</strong> -- have been recurrently associated with bipolar disorder susceptibility, evening chronotype preference, and altered sleep patterns.</p>
+
+<h4>Zeitgebers and Entrainment</h4>
+<p><strong>Zeitgebers</strong> (German for "time-givers") are environmental cues that synchronize (entrain) the endogenous circadian clock to the external 24-hour day. <strong>Light</strong> is the primary and most powerful zeitgeber, acting via the retinohypothalamic tract to the SCN. Morning light advances the clock (shifts rhythms earlier), while evening light delays it (shifts rhythms later). <strong>Social rhythms</strong> (work schedules, meal times, social interactions), <strong>physical activity</strong>, and <strong>meal timing</strong> serve as secondary zeitgebers. <strong>Melatonin</strong>, secreted by the pineal gland in response to the onset of darkness, serves as the biological "darkness signal" and is suppressed by light exposure, particularly short-wavelength blue light. Cortisol follows a complementary diurnal pattern, peaking approximately 30-45 minutes after waking (the cortisol awakening response) and reaching its nadir around midnight.</p>
+
+<h4>Two-Process Model of Sleep Regulation</h4>
+<p>The <strong>two-process model</strong> (Borbely, 1982) provides the dominant framework for understanding sleep-wake regulation. <strong>Process S (homeostatic sleep pressure)</strong> accumulates during wakefulness as a function of time awake, mediated partly by the buildup of adenosine in the basal forebrain (caffeine blocks adenosine receptors). Sleep pressure dissipates during sleep, particularly during slow-wave sleep. <strong>Process C (circadian regulation)</strong> is generated by the SCN and produces a roughly sinusoidal circadian alerting signal that promotes wakefulness during the day and permits sleep at night. The interaction of these two processes determines sleep timing, duration, and quality. In bipolar disorder, both processes may be dysregulated: Process S may be altered (reduced need for sleep in mania), and Process C is disrupted (irregular circadian rhythms).</p>
+
+<h4>Circadian Disruption in Bipolar Disorder</h4>
+<p>Multiple lines of evidence link circadian disruption to BD. <strong>Genetic studies</strong> show associations between clock gene polymorphisms and BD susceptibility. <strong>Melatonin</strong> secretion is often altered, with some studies showing increased sensitivity to light-induced melatonin suppression in BD. <strong>Social rhythms</strong> are characteristically irregular in BD patients, with disruptions in daily routines often preceding mood episodes. Patients may show <strong>phase delays</strong> (delayed sleep-wake timing, common in depression) or <strong>phase advances</strong> (earlier timing, sometimes seen in mania). <strong>Social Rhythm Therapy (SRT)</strong>, developed by Ellen Frank and colleagues, is an evidence-based psychotherapy for BD that specifically targets circadian and social rhythm regularity. Based on the <strong>social zeitgeber theory</strong>, SRT proposes that life events disrupt social routines, which destabilize circadian rhythms, which in turn trigger mood episodes in vulnerable individuals. Patients track and stabilize five key daily activities to maintain rhythmic regularity.</p>
+
+<h4>Chronotype and Social Jetlag</h4>
+<p><strong>Chronotype</strong> refers to an individual's innate tendency toward morningness (larks) or eveningness (owls), determined partly by clock gene variants, and partly by age and environmental factors. Evening chronotype is associated with worse BD outcomes, including more depressive episodes, poorer social functioning, and greater mood instability. <strong>Social jetlag</strong> describes the chronic mismatch between an individual's biological clock and their socially imposed schedule, calculated as the difference in sleep midpoint between workdays and free days. Evening chronotype individuals forced to wake early for work experience chronic social jetlag, which has been associated with poorer mental health outcomes.</p>`,
+
+readings:[
+{id:'cr1',ref:'Alloy et al. (2017). Role of circadian rhythm disruption in bipolar disorder. <em>Current Psychiatry Reports</em>.',desc:'Comprehensive review linking circadian disruption to BD'},
+{id:'cr2',ref:'Murray & Harvey (2010). Circadian rhythms and sleep in bipolar disorder. <em>Bipolar Disorders</em>.',desc:'Key theoretical paper'},
+{id:'cr3',ref:'McCarthy & Welsh (2012). Cellular circadian clocks in mood disorders. <em>Journal of Biological Rhythms</em>.',desc:'Molecular clock mechanisms in mood'},
+{id:'cr4',ref:'Frank et al. (2005). Two-year outcomes for IPSRT in bipolar I disorder. <em>Archives of General Psychiatry</em>.',desc:'Social rhythm therapy evidence'},
+{id:'cr5',ref:'Wirz-Justice (2006). Biological rhythm disturbances in mood disorders. <em>International Clinical Psychopharmacology</em>.',desc:'Clinical implications of rhythm disruption'},
+{id:'cr6',ref:'Logan & McClung (2019). Rhythms of life: circadian disruption and brain disorders across the lifespan. <em>Nature Reviews Neuroscience</em>.',desc:'Broader context of circadian disruption'}
+],
+
+flashcards:[
+{front:'Suprachiasmatic Nucleus (SCN)',back:'Master circadian pacemaker located in the anterior hypothalamus above the optic chiasm. Receives direct light input via retinohypothalamic tract. Synchronizes peripheral clocks throughout the body.'},
+{front:'Zeitgeber',back:'German for "time-giver." Environmental cue that entrains (synchronizes) the circadian clock to the 24h day. Light is the primary zeitgeber. Social routines, meals, and exercise are also zeitgebers.'},
+{front:'Clock Genes',back:'CLOCK, BMAL1, PER1-3, CRY1-2 form transcription-translation feedback loops that generate ~24h oscillations. Variants in these genes (especially CLOCK) are associated with bipolar disorder susceptibility.'},
+{front:'Process S and Process C',back:'Two-process model of sleep regulation. Process S = homeostatic sleep pressure (increases during waking, dissipates during sleep, adenosine-mediated). Process C = circadian alerting signal (promotes wakefulness during day, diminishes at night).'},
+{front:'Melatonin',back:'Hormone secreted by pineal gland in darkness (dim-light melatonin onset, DLMO). Suppressed by light exposure. Regulates sleep timing. Often used as circadian phase marker. Altered in BD.'},
+{front:'Social Rhythm Therapy (SRT)',back:'Psychotherapy for BD that targets daily routine regularity. Based on social zeitgeber theory -- life events disrupt routines, destabilize circadian rhythms, trigger mood episodes. Patients track and stabilize 5 key daily activities.'},
+{front:'Chronotype',back:'Individual tendency toward morningness or eveningness. Determined partly by clock gene variants. Evening chronotype is associated with worse BD outcomes, more depressive episodes, and poorer social functioning.'},
+{front:'Social Jetlag',back:'Discrepancy between an individual\'s biological clock and their social schedule. Calculated as difference in sleep midpoint between work and free days. Prevalent in evening types.'},
+{front:'Entrainment',back:'Process by which the circadian clock synchronizes to environmental time cues. Requires regular zeitgeber exposure. Disruption of entrainment (e.g., shift work, jet lag, irregular routines) destabilizes mood in BD.'},
+{front:'DLMO (Dim-Light Melatonin Onset)',back:'The gold-standard circadian phase marker. Time point when melatonin rises above threshold under dim light conditions. Earlier DLMO = phase advance; later DLMO = phase delay. Used to assess circadian timing in research.'}
+],
+
+quiz:[
+{q:'What is the primary zeitgeber for the circadian clock?',opts:['Social interaction','Meal timing','Light','Physical activity'],correct:2,expl:'Light detected by intrinsically photosensitive retinal ganglion cells is transmitted directly to the SCN and is the most powerful time cue for the circadian system.'},
+{q:'In the two-process model, Process S represents:',opts:['Circadian alerting signal','Homeostatic sleep pressure that accumulates during waking','REM sleep drive','Social rhythm regularity'],correct:1,expl:'Process S is the homeostatic component -- sleep pressure builds the longer you are awake (mediated partly by adenosine) and dissipates during sleep.'},
+{q:'Social Rhythm Therapy is based on the theory that:',opts:['Social isolation causes BD','Disrupted daily routines destabilize circadian rhythms and trigger mood episodes','Social media use worsens mood','Group therapy is better than individual'],correct:1,expl:'SRT targets the social zeitgeber hypothesis -- that life events disrupt social routines, leading to circadian instability, which triggers mood episodes in vulnerable individuals.'},
+{q:'Which clock gene variant is most consistently associated with bipolar disorder?',opts:['CLOCK','BMAL2','PER4','SIRT1'],correct:0,expl:'The CLOCK gene 3111T/C polymorphism has been most consistently linked to BD, associated with evening preference, reduced need for sleep, and insomnia.'},
+{q:'What is social jetlag?',opts:['Fatigue from socializing','Jet lag from travel','Mismatch between biological clock and social schedule','Seasonal mood changes'],correct:2,expl:'Social jetlag is the chronic discrepancy between when your body wants to sleep and when social obligations require you to wake, measured by shift in sleep midpoint between work and free days.'}
+]
+},
+
+sleep:{
+title:'Sleep Patterns',
+subtitle:'Sleep architecture, disruption, and the bidirectional link with mood',
+learn:`<h4>Sleep Architecture</h4>
+<p>Normal human sleep is organized into two fundamentally different states: <strong>non-rapid eye movement (NREM)</strong> sleep and <strong>rapid eye movement (REM)</strong> sleep, which alternate cyclically across the night. NREM sleep is further divided into three stages: <strong>N1</strong> (light transitional sleep, ~5% of total sleep), <strong>N2</strong> (characterized by sleep spindles and K-complexes on EEG, comprising ~50% of total sleep), and <strong>N3</strong> (slow-wave or deep sleep, characterized by high-amplitude delta waves, ~20% of total sleep). <strong>REM sleep</strong> accounts for approximately 25% of total sleep and is characterized by rapid eye movements, muscle atonia, and vivid dreaming. A complete sleep cycle (NREM through REM) lasts approximately 90 minutes, with 4-6 cycles per night. The distribution of sleep stages shifts across the night: more slow-wave sleep occurs in the first half, while REM periods become longer and more intense in the second half.</p>
+
+<h4>Sleep in Mania</h4>
+<p>Sleep disruption during mania is one of the most prominent features and a <strong>DSM-5 diagnostic criterion</strong>. The hallmark is a <strong>dramatically reduced need for sleep</strong>: patients may sleep only 2-3 hours per night yet report feeling fully rested and energized. This is distinct from insomnia, where the patient wants to sleep but cannot. Polysomnographic studies of manic patients consistently show <strong>shortened REM latency</strong> (faster entry into the first REM period) and <strong>increased REM density</strong> (more rapid eye movements per REM period). Total sleep time is markedly reduced, and sleep architecture is severely disrupted. Importantly, the relationship is bidirectional: not only does mania reduce sleep, but sleep reduction can trigger mania, creating a dangerous positive feedback loop.</p>
+
+<h4>Sleep in Bipolar Depression</h4>
+<p>Sleep disruption in bipolar depression is heterogeneous, with both <strong>insomnia</strong> and <strong>hypersomnia</strong> being common presentations. <strong>Insomnia</strong> (difficulty falling or staying asleep) occurs in approximately 40-60% of bipolar depressive episodes, manifesting as prolonged sleep onset latency, increased WASO, and reduced sleep efficiency. <strong>Hypersomnia</strong> (excessive sleeping, often 10-14 hours per day) occurs in approximately 25-40% of bipolar depressive episodes and may be more specific to bipolar (versus unipolar) depression, making it diagnostically useful. Some patients alternate between these patterns. Reduced slow-wave sleep and altered REM parameters are also observed.</p>
+
+<h4>Sleep During Euthymia: The Trait Question</h4>
+<p>One of the most important findings for this PhD is that <strong>sleep disruption persists during euthymia</strong> -- the periods of relatively stable mood between episodes. Meta-analyses (Geoffroy et al., 2015) demonstrate that even when mood is stable, BD patients show longer sleep onset latency, more wake after sleep onset, lower sleep efficiency, and more variable sleep patterns compared to healthy controls. This has profound implications: it suggests that sleep disruption is partly a <strong>trait feature</strong> of bipolar disorder (an enduring vulnerability marker), not solely a <strong>state marker</strong> (a consequence of current mood episodes). This trait-level disruption may represent a window of vulnerability through which circadian perturbations can trigger new episodes.</p>
+
+<h4>The Bidirectional Relationship: Core of This PhD</h4>
+<p>The relationship between sleep disruption and mood episodes in BD is <strong>bidirectional</strong>, and understanding this bidirectionality is the central question of this PhD project. <strong>Sleep loss can trigger mania</strong>: Wehr et al. (1987) proposed sleep reduction as a "final common pathway" to mania, noting that diverse triggers (jet lag, shift work, stimulant use, new baby, emotional stress) all share the common element of reducing sleep. This suggests that sleep deprivation itself -- regardless of the cause -- is the proximate trigger for manic episodes. Conversely, <strong>mood episodes cause sleep disruption</strong>: both mania and depression profoundly alter sleep. This creates a feedback loop where sleep loss triggers mania, mania further reduces sleep, and the cycle escalates. The critical clinical implication is that <strong>sleep monitoring could serve as an early warning system</strong> for episode onset, and <strong>sleep-targeted interventions</strong> (protecting sleep, regularizing sleep schedules) could potentially prevent episodes.</p>`,
+
+readings:[
+{id:'sl1',ref:'Harvey (2008). Sleep and circadian rhythms in bipolar disorder: seeking synchrony, harmony, and regulation. <em>American Journal of Psychiatry</em>.',desc:'Foundational theoretical paper'},
+{id:'sl2',ref:'Wehr et al. (1987). Sleep reduction as a final common pathway in the genesis of mania. <em>American Journal of Psychiatry</em>.',desc:'Classic paper on sleep deprivation triggering mania'},
+{id:'sl3',ref:'Gold & Sylvia (2016). The role of sleep in bipolar disorder. <em>Nature and Science of Sleep</em>.',desc:'Accessible overview'},
+{id:'sl4',ref:'Gruber et al. (2011). Sleep matters: sleep functioning and course of illness in bipolar disorder. <em>Journal of Affective Disorders</em>.',desc:'Sleep as predictor of course'},
+{id:'sl5',ref:'Geoffroy et al. (2015). Sleep in patients with remitted bipolar disorder: a meta-analysis. <em>Journal of Affective Disorders</em>.',desc:'Evidence that sleep disruption persists in euthymia'},
+{id:'sl6',ref:'Kaplan & Harvey (2009). Hypersomnia across mood disorders: a review and synthesis. <em>Sleep Medicine Reviews</em>.',desc:'Understudied hypersomnia'}
+],
+
+flashcards:[
+{front:'Sleep Architecture',back:'Organization of sleep into stages across the night. Normal pattern: 4-6 NREM-REM cycles (~90min each). More slow-wave sleep (N3) in first half, more REM in second half. Disrupted in BD across all phases.'},
+{front:'REM Sleep in Mania',back:'Shortened REM latency (faster entry into first REM period) and increased REM density (more rapid eye movements per REM period). These are among the most consistent PSG findings in mania.'},
+{front:'Sleep as Trait vs State in BD',back:'Meta-analyses show sleep disruption persists during euthymia (stable mood). This suggests it is partly a TRAIT vulnerability marker, not solely a consequence of mood episodes.'},
+{front:'Bidirectional Sleep-Mood Relationship',back:'Sleep loss can trigger mania (Wehr, 1987), and mood episodes cause sleep disruption. The directionality question -- which comes first -- is the central question of this PhD project.'},
+{front:'Sleep Regularity Index (SRI)',back:'Measures day-to-day consistency of sleep-wake timing. Higher = more regular. Reduced SRI in BD predicts worse mood outcomes. Calculated from actigraphy data.'},
+{front:'Insomnia vs Hypersomnia in BD Depression',back:'Both occur. Insomnia (difficulty falling/staying asleep) in ~40-60% of BD depression. Hypersomnia (excessive sleeping >10h) in ~25-40%. Hypersomnia more specific to bipolar vs unipolar depression.'},
+{front:'Sleep Deprivation Therapy',back:'Paradoxically, one night of total sleep deprivation produces rapid but temporary antidepressant effects in ~40-60% of depressed BD patients. Effects typically reverse after recovery sleep. Mechanism may involve adenosine/dopamine.'},
+{front:'Sleep Onset Latency (SOL)',back:'Time from lights out to sleep onset. Prolonged SOL (>30 min) indicates difficulty falling asleep. Elevated in BD depression and often during euthymia.'}
+],
+
+quiz:[
+{q:'Which sleep feature is a DSM-5 criterion for a manic episode?',opts:['Increased sleep duration','Decreased need for sleep','Sleepwalking','REM behavior disorder'],correct:1,expl:'"Decreased need for sleep" (sleeping 3h and feeling rested) is one of the 7 B-criteria for a manic episode. This distinguishes it from insomnia (wanting to sleep but cannot).'},
+{q:'What does it mean that sleep disruption is a "trait" feature in BD?',opts:['It only occurs during mood episodes','It persists even during euthymia, suggesting it is a stable vulnerability','It is genetically determined and untreatable','It worsens with age'],correct:1,expl:'Meta-analyses show BD patients have disrupted sleep even when their mood is stable, suggesting sleep disturbance is not just a symptom of episodes but an ongoing vulnerability.'},
+{q:'The "final common pathway" hypothesis (Wehr, 1987) proposes that:',opts:['All psychiatric disorders share the same etiology','Sleep deprivation is a common trigger for manic episodes','Medication is the only effective treatment','BD always progresses to psychosis'],correct:1,expl:'Wehr proposed that diverse triggers for mania share a common mechanism: they all reduce sleep, and sleep loss itself is the proximate trigger for mania.'},
+{q:'Hypersomnia in bipolar depression is:',opts:['Very rare','Present in 25-40% of BD depressive episodes','Always a side effect of medication','Only found in BD-I'],correct:1,expl:'Hypersomnia occurs in a substantial minority of BD depression episodes and may be more specific to bipolar (vs unipolar) depression, making it diagnostically useful.'}
+]
+},
+
+psychosis:{
+title:'Psychosis',
+subtitle:'Psychotic features in BD and the sleep-psychosis link',
+learn:`<h4>What is Psychosis?</h4>
+<p><strong>Psychosis</strong> refers to a loss of contact with reality, primarily characterized by two types of symptoms: <strong>hallucinations</strong> (perceptual experiences without an external stimulus, such as hearing voices or seeing things not present) and <strong>delusions</strong> (fixed false beliefs held with conviction despite contradictory evidence). Psychosis is not a diagnosis in itself but a feature that can occur across multiple psychiatric conditions, including bipolar disorder, schizophrenia, schizoaffective disorder, severe depression, and substance-induced states. In the context of BD, psychotic features most commonly occur during severe manic episodes ("psychotic mania") but can also appear during severe depressive episodes.</p>
+
+<h4>Psychotic Features in Bipolar Disorder</h4>
+<p>Psychotic features in BD are classified as <strong>mood-congruent</strong> or <strong>mood-incongruent</strong>. Mood-congruent psychosis involves content consistent with the current mood state: in mania, this typically includes <strong>grandiose delusions</strong> (believing one has special powers, is famous, or has a divine mission), while in depression, it includes nihilistic delusions (believing one is dead, does not exist, or that terrible things will happen) or delusions of guilt. <strong>Mood-incongruent</strong> psychotic features have content unrelated to mood state, such as persecutory delusions, delusions of reference, or thought insertion/withdrawal. Mood-incongruent psychosis generally carries a <strong>worse prognosis</strong> and can complicate the differential diagnosis with schizophrenia or schizoaffective disorder. Remarkably, up to <strong>50-70% of BD-I patients</strong> experience at least one psychotic episode during their lifetime, making psychosis a common rather than rare feature of the illness.</p>
+
+<h4>Differential Diagnosis</h4>
+<p>The distinction between <strong>BD with psychotic features, schizoaffective disorder, and schizophrenia</strong> is a critical diagnostic challenge. In BD with psychotic features, psychosis occurs <strong>exclusively during mood episodes</strong> and resolves when the mood episode resolves. In <strong>schizoaffective disorder</strong>, psychotic symptoms must persist for at least 2 weeks in the absence of a prominent mood episode. In <strong>schizophrenia</strong>, mood episodes, if present, are brief relative to the total duration of psychotic symptoms. These boundaries are subject to considerable debate, and some researchers view these conditions as lying on a continuum rather than representing discrete categories.</p>
+
+<h4>Sleep Deprivation and Psychosis</h4>
+<p>A particularly important connection for this PhD is the link between <strong>sleep deprivation and psychosis</strong>. Research demonstrates that prolonged sleep loss (beyond 24-48 hours) can induce psychotic symptoms even in <strong>healthy individuals with no psychiatric history</strong>. These symptoms include perceptual distortions, visual hallucinations, paranoid ideation, and disorganized thinking. The mechanism is thought to involve <strong>dopaminergic hyperactivity</strong>: sleep deprivation leads to increased dopamine release and receptor sensitivity, particularly in the mesolimbic pathway, mirroring the dopaminergic dysregulation seen in both mania and primary psychotic disorders. This provides a mechanistic link between sleep disruption, circadian dysfunction, and psychosis -- a pathway highly relevant to understanding how circadian disruption in BD may precipitate psychotic episodes.</p>
+
+<h4>Circadian Disruption Across the Psychosis Spectrum</h4>
+<p>This PhD project sits within a <strong>psychosis research group</strong>, and it is important to understand that circadian disruption is not limited to BD. Patients with <strong>schizophrenia</strong> also show profound circadian rhythm disturbances, including irregular sleep-wake patterns, reduced activity amplitudes, and disrupted melatonin secretion. This suggests shared vulnerability pathways across the psychosis spectrum. The study of circadian disruption in BD within a psychosis research context thus contributes to broader understanding of how circadian mechanisms relate to psychotic experiences across diagnostic categories. Freeman et al. (2017) demonstrated that improving sleep in people with insomnia reduced paranoia and hallucinatory experiences, providing causal evidence for the sleep-psychosis link.</p>`,
+
+readings:[
+{id:'ps1',ref:'Dunayevich & Keck (2000). Prevalence and description of psychotic features in bipolar mania. <em>Current Psychiatry Reports</em>.',desc:'Epidemiology of psychosis in BD'},
+{id:'ps2',ref:'Reeve et al. (2015). Disrupting sleep: the effects of sleep loss on psychotic experiences. <em>Schizophrenia Bulletin</em>.',desc:'Sleep deprivation causes psychotic symptoms'},
+{id:'ps3',ref:'Freeman et al. (2017). The effects of improving sleep on mental health: randomised controlled trial. <em>The Lancet Psychiatry</em>.',desc:'Sleep intervention reduces psychotic experiences'},
+{id:'ps4',ref:'Keshavan et al. (2011). Sleep disturbances in schizophrenia. <em>Acta Psychiatrica Scandinavica</em>.',desc:'Circadian disruption across psychosis spectrum'},
+{id:'ps5',ref:'Goes (2023). Psychotic features in bipolar and depressive disorders. <em>Current Psychiatry Reports</em>.',desc:'Diagnostic classification'}
+],
+
+flashcards:[
+{front:'Psychosis',back:'Loss of contact with reality, characterized by hallucinations and/or delusions. In BD, occurs most commonly during severe manic episodes (psychotic mania) but can also occur in severe depression.'},
+{front:'Mood-Congruent vs Mood-Incongruent Psychosis',back:'Mood-congruent: psychotic content matches mood state (grandiosity in mania, worthlessness in depression). Mood-incongruent: content unrelated to mood (persecution, reference). Mood-incongruent carries worse prognosis.'},
+{front:'Psychotic Mania',back:'Manic episode with psychotic features. Present in 50-70% of BD-I patients at some point. Grandiose delusions most common. Requires differential diagnosis from schizoaffective disorder.'},
+{front:'Sleep Deprivation and Psychosis',back:'Prolonged sleep loss (>48h) can induce psychotic symptoms (perceptual distortions, paranoia) even in healthy individuals. Mechanism involves dopaminergic hyperactivity. Links sleep disruption to psychosis mechanistically.'},
+{front:'Schizoaffective Disorder',back:'Diagnosis requiring BOTH a mood episode and psychotic symptoms that persist for >=2 weeks WITHOUT prominent mood symptoms. Key differential from BD with psychotic features where psychosis occurs only during mood episodes.'},
+{front:'Psychosis Spectrum',back:'Dimensional view: psychotic experiences exist on a continuum from subclinical (unusual beliefs, perceptual experiences in general population) to clinical (schizophrenia, psychotic BD). Circadian disruption is elevated across the spectrum.'}
+],
+
+quiz:[
+{q:'What percentage of BD-I patients experience at least one psychotic episode?',opts:['5-10%','20-30%','50-70%','90-100%'],correct:2,expl:'Psychotic features are very common in BD-I, occurring in up to 50-70% of patients during severe manic episodes.'},
+{q:'How does sleep deprivation relate to psychosis?',opts:['No established relationship','Prolonged sleep loss can induce psychotic symptoms via dopaminergic hyperactivity','Only affects people with schizophrenia','Causes permanent psychosis'],correct:1,expl:'Sleep deprivation studies show that even healthy individuals develop psychotic-like symptoms after extended wakefulness (>48h), likely through increased dopamine signaling.'},
+{q:'A patient in a manic episode believes they have been chosen by God to lead the world. This is an example of:',opts:['Mood-incongruent delusion','Mood-congruent delusion','Schizoaffective disorder','Thought insertion'],correct:1,expl:'Grandiose delusions during mania are mood-congruent -- the content (being special/chosen) matches the elevated mood state.'}
+]
+},
+
+stats:{
+title:'Statistics & Methods',
+subtitle:'Analytical frameworks for intensive longitudinal data in this PhD',
+learn:`<h4>Between-Person vs Within-Person Effects</h4>
+<p>This is perhaps the single most important conceptual distinction for this PhD. A <strong>between-person</strong> effect describes differences across individuals: "Do people who generally sleep less have worse mood on average?" A <strong>within-person</strong> effect describes fluctuations around one's own mean: "When THIS particular person sleeps less than THEIR usual amount, does THEIR mood worsen the next day?" These are fundamentally different questions that can yield opposite answers. A between-person correlation (e.g., people who sleep less have worse mood) says <strong>nothing</strong> about within-person dynamics. This PhD is primarily concerned with <strong>within-person dynamics</strong>: understanding how day-to-day changes in sleep and circadian function relate to mood fluctuations within individual bipolar disorder patients. The statistical decomposition of within-person and between-person effects was formalized by <strong>Curran &amp; Bauer (2011)</strong> and is essential for all analyses in this project.</p>
+
+<h4>Intensive Longitudinal Data (ILD)</h4>
+<p><strong>Intensive longitudinal data</strong> refers to datasets with many repeated measurements per person over time, enabling the study of within-person processes and dynamics. This PhD data is a prime example of ILD: continuous actigraphy data (providing daily sleep and activity metrics) combined with ecological momentary assessment (EMA) self-reports at daily, weekly, and biweekly frequencies, collected over months from approximately 70 patients. The key advantage of ILD is that it allows researchers to move beyond static between-person comparisons to examine the <strong>temporal dynamics</strong> of how variables unfold and influence each other over time within individuals. The methods needed for ILD analysis are fundamentally different from traditional cross-sectional or panel data methods.</p>
+
+<h4>Multilevel Modeling</h4>
+<p><strong>Multilevel modeling</strong> (also called hierarchical linear modeling or mixed-effects modeling) is the foundational statistical framework for ILD. The data structure is hierarchical: <strong>Level 1</strong> represents within-person variation (repeated time points nested within individuals), and <strong>Level 2</strong> represents between-person variation (individual differences). <strong>Random intercepts</strong> capture the fact that individuals have different baseline levels (some patients generally sleep more than others). <strong>Random slopes</strong> capture the fact that the within-person effect may vary across individuals (sleep disruption may affect mood more strongly in some patients than others). Key R packages include <strong>lme4</strong> and <strong>nlme</strong> for frequentist estimation, and <strong>brms</strong> for Bayesian multilevel modeling.</p>
+
+<h4>Cross-Lagged Panel Model (CLPM)</h4>
+<p>The <strong>Cross-Lagged Panel Model</strong> is a structural equation model designed to test temporal precedence between two or more variables measured repeatedly over time. In a basic CLPM with variables X and Y measured at times 1, 2, ..., T, the model estimates <strong>autoregressive paths</strong> (X at time t predicting X at time t+1) and <strong>cross-lagged paths</strong> (X at time t predicting Y at time t+1, and vice versa). A significant cross-lag from X to Y suggests that X temporally precedes (and potentially influences) Y. However, Hamaker et al. (2015) identified a <strong>fundamental flaw</strong>: the standard CLPM does not separate within-person fluctuations from between-person trait differences. A significant cross-lag may reflect nothing more than stable individual differences (e.g., people who have more sleep disruption also tend to have worse mood, as a trait) rather than genuine within-person dynamics.</p>
+
+<h4>RI-CLPM (Random Intercept Cross-Lagged Panel Model)</h4>
+<p>The <strong>RI-CLPM</strong>, proposed by Hamaker, Kuiper, &amp; Grasman (2015), is the corrected version of the CLPM and likely the <strong>key statistical tool for this PhD</strong>. By adding person-specific <strong>random intercepts</strong> for each variable, the RI-CLPM decomposes the observed scores into a stable between-person component (the random intercept, capturing each person's trait level) and a fluctuating within-person component (the deviation from one's own mean at each time point). The cross-lagged paths are then estimated between the <strong>within-person components only</strong>, providing a genuine test of whether within-person changes in sleep predict subsequent within-person changes in mood (and vice versa). This is typically implemented in <strong>lavaan</strong> in R or in <strong>Mplus</strong>. Extensions (Mulder &amp; Hamaker, 2021) include allowing random slopes for the cross-lagged effects and incorporating between-person predictors.</p>
+
+<h4>DSEM (Dynamic Structural Equation Modeling)</h4>
+<p><strong>Dynamic Structural Equation Modeling</strong>, introduced by Asparouhov, Hamaker, and Muthen (2018), combines time-series modeling with structural equation modeling in a multilevel Bayesian framework. DSEM is highly relevant for this PhD because it naturally handles intensive longitudinal data: at the <strong>within-person level</strong>, it estimates individual autoregressive and cross-lagged effects (like an N=1 time-series model), while at the <strong>between-person level</strong>, it models individual differences in these dynamic parameters. DSEM can handle unequally spaced time points, missing data, and allows each person's dynamic parameters to vary. It is implemented in <strong>Mplus</strong> (which can be called from R via the MplusAutomation package). DSEM offers more flexibility than RI-CLPM, particularly for data with many time points per person.</p>
+
+<h4>VAR Models (Vector Autoregression)</h4>
+<p>In a <strong>Vector Autoregression</strong> model, each variable in a multivariate system is predicted by its own lagged values and the lagged values of all other variables. VAR models are the foundation for <strong>network analysis</strong> in psychopathology: the estimated temporal coefficients can be visualized as a directed network showing how symptoms influence each other over time. <strong>Idiographic VAR</strong> (person-specific) models can be estimated for individuals with enough time points (typically 50-60+), revealing personalized dynamic patterns. <strong>Multilevel VAR</strong> (mlVAR in R) pools information across individuals while allowing individual variation, providing both group-level and person-specific network estimates.</p>
+
+<h4>Granger Causality</h4>
+<p>A variable X is said to <strong>"Granger-cause"</strong> Y if past values of X improve the prediction of Y beyond what Y's own past values provide. This is a test of <strong>temporal precedence</strong>, not true causation in the interventionist sense. In the context of this PhD, testing whether disrupted sleep Granger-causes mood deterioration means asking: "Does yesterday's sleep disturbance help predict today's mood, above and beyond what yesterday's mood already predicts?" Granger causality can be evaluated within the VAR framework and is relevant for the directionality question central to this research.</p>
+
+<h4>Mixed-Frequency Data Handling</h4>
+<p>A core practical challenge of this PhD is that data is collected at <strong>different frequencies</strong>: actigraphy provides daily (or even more fine-grained) data, while EMA self-reports come daily, weekly, and biweekly. Strategies include: <strong>(a) Aggregation</strong> -- aggregate the higher-frequency data to match the lower-frequency data (e.g., compute weekly means/SDs of daily actigraphy to pair with weekly EMA). This is the simplest approach but loses within-week variation. <strong>(b) Separate models</strong> at each frequency. <strong>(c) Continuous-time models</strong> that handle irregular time intervals naturally. <strong>(d) Latent variable approaches</strong> where indicators at different time scales load onto latent factors. Each approach involves trade-offs between simplicity, information loss, and model complexity.</p>
+
+<h4>Missing Data</h4>
+<p>Missing data is inevitable in longitudinal studies. Key considerations: <strong>Multiple imputation</strong> generates several plausible complete datasets, analyzes each separately, and pools results. <strong>FIML (Full Information Maximum Likelihood)</strong> uses all available data to estimate model parameters, assuming data is Missing At Random (MAR). In actigraphy, <strong>non-wear periods</strong> are handled by GGIR algorithms. The critical assumption question is whether data is <strong>MCAR</strong> (missing completely at random), <strong>MAR</strong> (missing at random, conditional on observed data), or <strong>MNAR</strong> (missing not at random -- e.g., patients may stop wearing actigraphs during mood episodes, creating informative missingness).</p>
+
+<h4>Sample Size Considerations</h4>
+<p>N=70 patients is moderate for multilevel models, but power depends on both <strong>N (persons)</strong> and <strong>T (time points per person)</strong>. With many daily observations over months (potentially hundreds of time points per person), the total data volume can support complex models. However, <strong>cross-level interactions</strong> (e.g., testing whether the sleep-mood relationship is stronger in rapid-cycling patients) require larger between-person N. <strong>Simulation-based power analysis</strong> (e.g., using the simr package in R) is recommended to estimate power for specific models and effect sizes. In ILD, small within-person effects can be clinically meaningful, so standardized effect sizes and variance explained at within versus between levels should both be reported.</p>
+
+<h4>What is Time Series Data?</h4>
+<p><strong>Time series data</strong> consists of observations of one or more variables recorded sequentially at regular (or sometimes irregular) time intervals. What distinguishes time series from ordinary repeated measures is that the <strong>ordering matters</strong> and consecutive observations are typically <strong>autocorrelated</strong> -- each value is statistically dependent on its preceding values. In this PhD, daily actigraphy metrics (sleep efficiency, relative amplitude, L5, M10) and daily EMA mood ratings form multivariate time series for each participant. Each participant generates their own time series of 60-200+ days, creating a dataset that is both intensive longitudinal and hierarchical. Time series data can be <strong>univariate</strong> (one variable measured over time, e.g., daily mood) or <strong>multivariate</strong> (several variables measured simultaneously over time, e.g., mood + sleep efficiency + activity level). The key properties to assess include: <strong>trend</strong> (systematic long-term increase or decrease), <strong>seasonality</strong> (recurring patterns at fixed intervals), <strong>stationarity</strong> (statistical properties like mean and variance remaining constant over time), and <strong>autocorrelation structure</strong> (how strongly each observation relates to its predecessors at various lags).</p>
+
+<h4>Stationarity and Why It Matters</h4>
+<p>A time series is <strong>stationary</strong> if its statistical properties (mean, variance, autocorrelation) do not change over time. Most time series methods (VAR, ARIMA, Granger causality) assume stationarity. In this PhD, stationarity is a substantive question: if a patient's sleep efficiency has a stable mean across months (stationary), the data can be analyzed with standard methods. But if the patient is deteriorating or cycling (non-stationary trend or periodicity), this must be addressed first. Common approaches: <strong>differencing</strong> (analyzing changes rather than levels, e.g., "did sleep efficiency increase or decrease compared to yesterday"), <strong>detrending</strong> (removing linear or polynomial trends), or using models that explicitly accommodate non-stationarity (e.g., state-space models). The <strong>Augmented Dickey-Fuller (ADF) test</strong> and the <strong>KPSS test</strong> can formally test for stationarity. In practice, person-mean centering in multilevel models also helps -- working with deviations from each person's mean naturally removes between-person level differences.</p>
+
+<h4>Autoregressive (AR) and Moving Average (MA) Models</h4>
+<p>The building blocks of time series analysis: An <strong>autoregressive model of order p, AR(p)</strong>, predicts the current value from the previous p values. An AR(1) model means "today's sleep efficiency depends on yesterday's sleep efficiency plus random noise" -- this captures <strong>inertia</strong> or <strong>carry-over</strong> effects. A <strong>moving average model of order q, MA(q)</strong>, predicts the current value as a function of the previous q random shocks (error terms). <strong>ARIMA(p,d,q)</strong> combines both with differencing of order d for non-stationary data. These are the foundations of univariate time series analysis. In the multivariate case, <strong>VAR models</strong> (already discussed above) generalize AR to multiple interdependent variables simultaneously, allowing each variable to depend on lagged values of itself and all other variables. The choice of <strong>lag order</strong> (how many previous time points to include) is determined using information criteria like AIC or BIC. For daily data, lag-1 (yesterday predicts today) is the most common starting point, though lag-2 or lag-7 (weekly cycle) may also be relevant.</p>
+
+<h4>Random Effects, Fixed Effects, and Mixed Models -- Explained</h4>
+<p>These terms are critical and often confusing. A <strong>fixed effect</strong> is a parameter assumed to be the same across all individuals (or levels) in the study -- it represents a single, population-average value. For example: "On average, across all patients, a 1-hour decrease in sleep predicts a 0.5-point drop in next-day mood." A <strong>random effect</strong> is a parameter that is allowed to vary across individuals, drawn from a distribution (typically normal). For example: "The effect of sleep on next-day mood varies across patients, with some showing stronger effects than others." A <strong>mixed model</strong> (also called mixed-effects model) includes both fixed effects (population averages) and random effects (individual deviations from those averages). The simplest mixed model has a <strong>random intercept</strong>: each person has their own baseline level (some people generally sleep more than others), but the effect of predictors is the same for everyone. A <strong>random slope</strong> model goes further: not only do baselines differ, but the <strong>relationship between variables differs across individuals</strong>. For this PhD, a random slope model might reveal that sleep disruption has a strong effect on mood for patient A but a weak effect for patient B -- a clinically meaningful individual difference. In R: <code>lmer(mood ~ sleep_eff + (1 + sleep_eff | participant_id))</code> specifies both a random intercept and random slope for sleep efficiency.</p>
+
+<h4>Life Trajectory Research (Livslopsendringer)</h4>
+<p><strong>Life course research</strong> (Norwegian: livslopsendringer/livslopsforskining) studies how events, transitions, and exposures across the lifespan shape health and development. In psychiatry, life course approaches examine questions like: "How does early onset of bipolar disorder affect long-term cognitive and social trajectories?" or "Do circadian rhythm patterns change systematically over decades of illness?" The key data types in life course research are: <strong>longitudinal cohort data</strong> (following individuals over years or decades with repeated measurements), <strong>register data</strong> (national health registries common in Norway, providing population-level event histories), <strong>retrospective data</strong> (self-reported life histories), and <strong>experience sampling / EMA data</strong> (intensive measurements capturing micro-level dynamics within life phases). Key statistical methods include: <strong>growth curve models</strong> (modeling individual trajectories of change over time using multilevel models or latent growth curves), <strong>latent class growth analysis (LCGA)</strong> (identifying subgroups following distinct trajectory patterns), <strong>growth mixture models (GMM)</strong> (combining growth curves with latent classes to find groups with different developmental patterns), <strong>survival analysis / event history analysis</strong> (modeling the timing and probability of events like mood episodes, hospitalizations, or treatment changes), and <strong>sequence analysis</strong> (analyzing patterns and order of life events or illness states).</p>
+
+<h4>Connecting Life Course Research to Sleep and Circadian Monitoring</h4>
+<p>Even though this PhD focuses on intensive short-term monitoring (daily actigraphy over months), the life course perspective is deeply relevant. Sleep and circadian rhythm patterns change across the lifespan: <strong>chronotype shifts</strong> from eveningness in adolescence toward morningness with age, <strong>sleep architecture</strong> changes (less deep sleep with aging), and <strong>circadian amplitude</strong> typically decreases. In bipolar disorder, these normative age-related changes interact with illness-related disruptions. The <strong>neuroprogression hypothesis</strong> is inherently a life course claim: it argues that the illness trajectory worsens over successive episodes across the lifespan. By monitoring sleep and circadian patterns intensively at one point, this PhD captures a <strong>micro-level window</strong> into processes that unfold across the macro-level life course. The connection works in both directions: <strong>intensive longitudinal data nested within life course context</strong> means that the daily sleep-mood dynamics this PhD captures are shaped by where each patient is in their illness trajectory (early vs. established illness, number of previous episodes, current age, medication history). Conversely, <strong>aggregated daily patterns can inform life course questions</strong> -- for instance, whether circadian disruption measured by actigraphy predicts long-term outcomes when patients are followed up years later. Understanding this telescoping relationship between daily dynamics and life course trajectories is essential for interpreting what the data means clinically.</p>
+
+<h4>Growth Curve Models</h4>
+<p><strong>Growth curve models</strong> (GCMs) are a specific application of multilevel modeling designed to model change over time. In a basic GCM, each person's trajectory is described by an <strong>intercept</strong> (their starting point) and a <strong>slope</strong> (their rate of change), both of which vary across individuals. The model estimates the average intercept and slope (fixed effects) and the variance of intercepts and slopes across people (random effects). Extensions include <strong>quadratic or nonlinear growth</strong> (trajectories that curve), <strong>piecewise growth</strong> (different slopes for different time periods), and <strong>time-varying covariates</strong> (predictors that change over time alongside the outcome). In the context of bipolar disorder, growth curve models can answer questions like: "Does circadian regularity (IS) improve over the course of treatment?" or "Is there a systematic decline in sleep efficiency over months, and does this differ by diagnosis (BD-I vs BD-II)?" In R, these can be estimated with lme4, nlme, or lavaan (for latent growth curve models in the SEM framework).</p>`,
+
+readings:[
+{id:'st1',ref:'Hamaker et al. (2015). A critique of the cross-lagged panel model. <em>Psychological Methods</em>.',desc:'THE must-read paper -- explains why standard CLPM confounds within/between effects'},
+{id:'st2',ref:'Bolger & Laurenceau (2013). Intensive Longitudinal Methods. <em>Guilford Press</em>.',desc:'The textbook for ILD analysis'},
+{id:'st3',ref:'Asparouhov et al. (2018). Dynamic structural equation models. <em>Structural Equation Modeling</em>.',desc:'DSEM methodology'},
+{id:'st4',ref:'Curran et al. (2012). Disaggregation of within-person and between-person effects. <em>Annual Review of Psychology</em>.',desc:'Foundational for understanding levels of analysis'},
+{id:'st5',ref:'Bringmann et al. (2013). A network approach to psychopathology. <em>PLoS ONE</em>.',desc:'VAR network approach to mental health data'},
+{id:'st6',ref:'Myin-Germeys et al. (2018). Experience sampling methodology in mental health research. <em>World Psychiatry</em>.',desc:'ESM/EMA methodology review'},
+{id:'st7',ref:'Epskamp et al. (2018). Personalized network modeling in psychopathology. <em>World Psychiatry</em>.',desc:'Idiographic network models'},
+{id:'st8',ref:'van de Schoot et al. (2021). Bayesian statistics and modelling. <em>Nature Reviews Methods Primers</em>.',desc:'Bayesian approach introduction'},
+{id:'st9',ref:'Mulder & Hamaker (2021). Three extensions of the RI-CLPM. <em>Structural Equation Modeling</em>.',desc:'RI-CLPM extensions'},
+{id:'st10',ref:'Schafer & Graham (2002). Missing data: our view of the state of the art. <em>Psychological Methods</em>.',desc:'Missing data handling'},
+{id:'st11',ref:'Shumway & Stoffer (2017). Time Series Analysis and Its Applications. <em>Springer</em> (4th ed.).',desc:'Comprehensive textbook on time series methods -- AR, MA, ARIMA, VAR, state-space models'},
+{id:'st12',ref:'Box, Jenkins, Reinsel & Ljung (2015). Time Series Analysis: Forecasting and Control. <em>Wiley</em> (5th ed.).',desc:'The classic reference for ARIMA modeling and Box-Jenkins methodology'},
+{id:'st13',ref:'Hamilton (1994). Time Series Analysis. <em>Princeton University Press</em>.',desc:'Graduate-level treatment of stationarity, unit roots, VAR, Granger causality, and cointegration'},
+{id:'st14',ref:'Singer & Willett (2003). Applied Longitudinal Data Analysis. <em>Oxford University Press</em>.',desc:'Practical guide to growth curve models and event history analysis for life course data'},
+{id:'st15',ref:'Elder & Giele (2009). The Craft of Life Course Research. <em>Guilford Press</em>.',desc:'Life course research methods and principles -- relevant for understanding trajectory approaches'},
+{id:'st16',ref:'Ram & Grimm (2009). Growth mixture modeling: A method for identifying differences in longitudinal change among unobserved groups. <em>International Journal of Behavioral Development</em>, 33(6):565-576.',desc:'Introduction to growth mixture models for identifying trajectory subgroups'},
+{id:'st17',ref:'Bringmann et al. (2017). Changing dynamics: Time-varying autoregressive models using generalized additive modeling. <em>Psychological Methods</em>, 22(3):409-425.',desc:'Time-varying VAR models -- addresses non-stationarity in psychological time series'},
+{id:'st18',ref:'Haslbeck et al. (2021). A tutorial on estimating time-varying vector autoregressive models. <em>Multivariate Behavioral Research</em>, 56(1):120-149.',desc:'Practical tutorial on TV-VAR models for intensive longitudinal data'}
+],
+
+flashcards:[
+{front:'Between-person vs Within-person',back:'Between: differences across individuals (trait). Within: fluctuations around one\'s own mean (state). A cross-sectional correlation (people who sleep less have worse mood) says NOTHING about within-person dynamics.'},
+{front:'CLPM (Cross-Lagged Panel Model)',back:'Tests if variable X at time t predicts variable Y at time t+1, controlling for Y at time t. PROBLEM: confounds between-person and within-person variance. A significant effect may reflect stable trait differences, not temporal dynamics.'},
+{front:'RI-CLPM',back:'Random Intercept Cross-Lagged Panel Model. Adds person-specific random intercepts to CLPM, separating trait (between) from state (within) variation. Cross-lags now reflect WITHIN-PERSON temporal dynamics. Must-know for this PhD.'},
+{front:'DSEM',back:'Dynamic Structural Equation Modeling. Combines N=1 time series (autoregression, cross-lags) with multilevel framework (individual differences in parameters). Bayesian estimation in Mplus. Handles intensive longitudinal data naturally.'},
+{front:'VAR (Vector Autoregression)',back:'Each variable predicted by its own lagged values AND lagged values of all other variables in the system. Foundation for network analysis in psychopathology. Can be applied idiographically (person-specific) or multilevel (mlVAR).'},
+{front:'Granger Causality',back:'X Granger-causes Y if lagged X improves prediction of Y beyond what lagged Y alone provides. Tests temporal precedence, not true causation. Can be evaluated within VAR models. Relevant for directionality question.'},
+{front:'Multilevel Model',back:'Accounts for nested data structure (time points nested within persons). Level 1: within-person (daily fluctuations). Level 2: between-person (individual differences). Allows random intercepts and slopes.'},
+{front:'FIML',back:'Full Information Maximum Likelihood. Missing data method that uses all available data to estimate parameters, assuming data is MAR. More efficient than listwise deletion. Standard in SEM/multilevel software.'},
+{front:'Mixed-Frequency Challenge',back:'When variables are measured at different rates (daily actigraphy, weekly mood). Solutions: aggregate to match, model at multiple time scales, continuous-time models, or latent variable approaches. No single best solution.'},
+{front:'Power in Multilevel ILD',back:'Depends on BOTH number of persons (N) and observations per person (T). N=70 with many daily observations can support complex models. However, power for cross-level interactions requires larger N.'},
+{front:'Time Series Data',back:'Observations recorded sequentially over time where ordering matters and consecutive values are autocorrelated. Key properties: trend (long-term direction), seasonality (recurring patterns), stationarity (constant statistical properties), and autocorrelation structure (how current values relate to past values at various lags).'},
+{front:'Stationarity',back:'A time series is stationary if its mean, variance, and autocorrelation structure do not change over time. Most time series methods (VAR, ARIMA, Granger causality) assume stationarity. Test with ADF or KPSS tests. If non-stationary: differencing, detrending, or state-space models.'},
+{front:'AR(1) Model',back:'Autoregressive model of order 1: today\'s value = coefficient x yesterday\'s value + random noise. Captures inertia/carry-over effects. In this PhD: "today\'s sleep efficiency depends partly on yesterday\'s." Foundation of more complex models like VAR.'},
+{front:'ARIMA(p,d,q)',back:'Combines AutoRegressive (p past values), Integrated (d differencing steps for non-stationarity), and Moving Average (q past error terms). The Box-Jenkins approach for univariate time series. Multivariate extension = VAR.'},
+{front:'Fixed Effect vs Random Effect',back:'Fixed effect: same parameter for all individuals (population average). Random effect: parameter varies across individuals, drawn from a distribution. Example: "sleep affects mood by 0.5 on average" (fixed) but "the effect ranges from 0.1 to 0.9 across patients" (random).'},
+{front:'Random Intercept vs Random Slope',back:'Random intercept: each person has a different baseline level (some sleep more). Random slope: the RELATIONSHIP between variables differs across people (sleep disruption affects mood more for some). In R: (1 + sleep | id) gives both.'},
+{front:'Life Course Research (Livslopsendringer)',back:'Studies how events, transitions, and exposures across the lifespan shape health. Key methods: growth curve models, latent class growth analysis, growth mixture models, survival analysis, sequence analysis. Data types: cohort, register, retrospective, EMA.'},
+{front:'Growth Curve Model',back:'Multilevel model for change over time. Each person has an intercept (starting point) and slope (rate of change), both varying as random effects. Extensions: quadratic growth, piecewise growth, time-varying covariates. Implemented in lme4, nlme, or lavaan.'},
+{front:'Growth Mixture Model (GMM)',back:'Combines growth curve modeling with latent class analysis to identify subgroups following DISTINCT trajectory patterns. Example: "group 1 shows stable circadian rhythms while group 2 shows progressive deterioration." Important for heterogeneity in BD.'},
+{front:'Micro-Macro Connection in Longitudinal Research',back:'Daily dynamics (micro: sleep-mood relationships from actigraphy) are nested within life course trajectories (macro: illness progression over years). This PhD captures a micro-level window into processes shaped by where each patient is in their illness trajectory.'}
+],
+
+quiz:[
+{q:'The fundamental flaw of the standard CLPM identified by Hamaker et al. (2015) is:',opts:['It cannot handle missing data','It confounds between-person and within-person variation','It requires normally distributed data','It only works with 2 time points'],correct:1,expl:'Standard CLPM does not separate stable between-person differences from within-person dynamics. A significant cross-lag might reflect trait-level association, not that changes in X precede changes in Y within individuals.'},
+{q:'RI-CLPM addresses the CLPM problem by:',opts:['Adding more time points','Using Bayesian estimation','Adding person-specific random intercepts to separate trait and state variance','Controlling for demographics'],correct:2,expl:'Random intercepts capture each person\'s stable trait level. Remaining variation represents within-person fluctuations, and cross-lags between these fluctuations reflect true temporal dynamics.'},
+{q:'In the context of this PhD, "Does sleep disruption Granger-cause mood episodes?" means:',opts:['Sleep disruption directly causes mood episodes','Past sleep disruption improves prediction of future mood beyond what past mood alone predicts','Sleep and mood are perfectly correlated','Sleep disruption occurs simultaneously with mood episodes'],correct:1,expl:'Granger causality tests whether the HISTORY of X adds predictive value for Y beyond Y\'s own history. It establishes temporal precedence, not definitive causation.'},
+{q:'With daily actigraphy data and weekly self-report mood data, the best initial strategy is:',opts:['Discard the actigraphy data','Interpolate daily mood scores','Aggregate daily actigraphy to weekly summaries to match mood measurement frequency','Analyze only the daily data'],correct:2,expl:'Aggregating the higher-frequency data (actigraphy) to match the lower-frequency data (weekly mood) is the most straightforward approach, though it loses within-week actigraphy variation.'},
+{q:'N=70 patients with daily data for several months -- is this sufficient for multilevel modeling?',opts:['No, need at least 200 participants','Yes, because the many time points per person (large T) compensate for moderate N','Only if data is normally distributed','Only for simple models'],correct:1,expl:'In multilevel ILD, power depends on both N and T. With ~70 persons and potentially hundreds of daily observations each, the total data volume supports even relatively complex multilevel models.'},
+{q:'What advantage does DSEM have over RI-CLPM for this type of data?',opts:['It requires fewer assumptions','It handles unequally spaced time points and allows person-specific dynamic parameters','It does not require software','It works with smaller samples'],correct:1,expl:'DSEM integrates individual time-series modeling within a multilevel framework, naturally handling the intensive longitudinal structure and allowing each person\'s dynamics to vary.'},
+{q:'What makes time series data fundamentally different from standard repeated measures?',opts:['It has more variables','Consecutive observations are autocorrelated and temporal ordering matters','It requires larger sample sizes','It can only be collected digitally'],correct:1,expl:'In time series data, each observation is statistically dependent on preceding values (autocorrelation), and the sequential ordering carries information. Standard methods that assume independence of observations will produce misleading results.'},
+{q:'A time series is "stationary" when:',opts:['It shows a clear upward trend','Its statistical properties (mean, variance, autocorrelation) remain constant over time','It has no missing data','It is measured at exactly equal intervals'],correct:1,expl:'Stationarity means the generating process does not change over time. Most time series methods (VAR, Granger causality) assume this. Non-stationary data must be differenced or detrended first.'},
+{q:'In a mixed-effects model, what does a "random slope" for sleep efficiency capture?',opts:['The average effect of sleep on mood','That the relationship between sleep and mood DIFFERS across individual patients','The time trend in sleep data','Measurement error in sleep efficiency'],correct:1,expl:'A random slope means the effect of sleep efficiency on the outcome varies by person. Some patients may show a strong sleep-mood link while others show a weak one -- this individual variation is the random slope.'},
+{q:'What is the key difference between a growth curve model and a cross-lagged panel model?',opts:['Growth curve models require more data','Growth curves model systematic change trajectories over time, while CLPMs model temporal precedence between variables','Growth curves are Bayesian only','CLPMs cannot handle longitudinal data'],correct:1,expl:'Growth curve models focus on how each person\'s level of a variable changes over time (intercept + slope as random effects). CLPMs focus on whether changes in variable X precede changes in variable Y.'},
+{q:'How does life course research connect to intensive daily monitoring in this PhD?',opts:['They are completely unrelated approaches','Daily sleep-mood dynamics are a micro-level window into macro-level illness trajectories shaped by illness stage and history','Life course research replaces the need for daily data','They use identical statistical methods'],correct:1,expl:'Daily dynamics captured by actigraphy and EMA are shaped by where each patient is in their illness trajectory (early vs. established, number of episodes, age). The micro-level patterns nest within and inform macro-level life course questions.'},
+{q:'A growth mixture model (GMM) would be useful in this PhD for:',opts:['Replacing missing data','Identifying subgroups of patients following distinct trajectory patterns (e.g., stable vs deteriorating circadian rhythms)','Calculating sleep efficiency','Standardizing actigraphy data'],correct:1,expl:'GMM combines growth curve modeling with latent class analysis to find subgroups with different patterns of change over time -- directly relevant for understanding heterogeneity in how bipolar patients\' circadian rhythms evolve.'}
+]
+}
+};
+
+const MILESTONES=[
+'Read Hamaker et al. (2015) on RI-CLPM',
+'Understand between-person vs within-person distinction',
+'Know all actigraphy sleep metrics (TST, WASO, SE, SOL)',
+'Know all circadian metrics (IS, IV, RA, L5, M10)',
+'Understand GGIR pipeline (5 parts)',
+'Read Harvey (2008) on sleep in BD',
+'Read Wehr (1987) on sleep deprivation and mania',
+'Understand DSM-5 criteria for manic episode',
+'Know BD-I vs BD-II distinction clearly',
+'Understand neuroprogression/kindling model',
+'Know two-process model of sleep (S + C)',
+'Understand SRT and social zeitgeber theory',
+'Know molecular clock mechanism (CLOCK/BMAL1/PER/CRY)',
+'Understand CLPM limitations and why RI-CLPM is needed',
+'Know how to handle mixed-frequency data',
+'Understand trait vs state sleep disruption in BD',
+'Know psychosis prevalence in BD-I',
+'Understand Granger causality concept',
+'Be familiar with DSEM and when to use it',
+'Understand missing data approaches (FIML, MI)',
+'Understand time series fundamentals (stationarity, autocorrelation, AR models)',
+'Know the difference between fixed effects, random effects, and mixed models',
+'Understand life course research methods (growth curves, GMM, survival analysis)',
+'Read supervisor publications: Hoegh (MinDag, affective lability), Lagerberg (substance use, BD course), Sorensen (statistical methods)',
+'Understand the micro-macro connection between daily dynamics and life course trajectories'
+];
+
+/* ===== STATE MANAGEMENT ===== */
+function getState(){
+  try{ return JSON.parse(localStorage.getItem('phd_prep_state'))||{}; }catch(e){ return {}; }
+}
+function setState(s){ localStorage.setItem('phd_prep_state',JSON.stringify(s)); }
+function upState(fn){ let s=getState(); fn(s); setState(s); }
+
+/* ===== DARK MODE ===== */
+function toggleDark(){
+  let d=document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme',d?'':'dark');
+  localStorage.setItem('phd_dark',d?'':'dark');
+  document.getElementById('dtog').textContent=d?'Dark Mode':'Light Mode';
+}
+(function(){
+  let t=localStorage.getItem('phd_dark');
+  if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');document.addEventListener('DOMContentLoaded',()=>{document.getElementById('dtog').textContent='Light Mode'});}
+})();
+
+/* ===== PROGRESS HELPERS ===== */
+function getReadProgress(themeId){
+  let s=getState(), r=s.read||{}, theme=THEMES[themeId];
+  if(!theme) return {done:0,total:0};
+  let total=theme.readings.length, done=0;
+  theme.readings.forEach(rd=>{ if(r[rd.id]) done++; });
+  return {done,total};
+}
+function getQuizBest(themeId){
+  let s=getState(), q=s.quiz||{};
+  return q[themeId]||0;
+}
+function getFlashcardsReviewed(themeId){
+  let s=getState(), f=s.fc||{}, theme=THEMES[themeId];
+  if(!theme) return {known:0,total:0};
+  let total=theme.flashcards.length, known=0;
+  theme.flashcards.forEach((c,i)=>{ if(f[themeId+'_'+i]==='known') known++; });
+  return {known,total};
+}
+function getThemeProgress(themeId){
+  let rp=getReadProgress(themeId), qb=getQuizBest(themeId), fc=getFlashcardsReviewed(themeId);
+  let theme=THEMES[themeId];
+  if(!theme) return 0;
+  let rPct=rp.total?rp.done/rp.total:0;
+  let qPct=theme.quiz.length?qb/theme.quiz.length:0;
+  let fPct=fc.total?fc.known/fc.total:0;
+  return Math.round(((rPct+qPct+fPct)/3)*100);
+}
+function getOverallProgress(){
+  let ids=Object.keys(THEMES), sum=0;
+  ids.forEach(id=>sum+=getThemeProgress(id));
+  return ids.length?Math.round(sum/ids.length):0;
+}
+
+/* ===== NAVIGATION ===== */
+let currentSection='dashboard';
+function navigate(id){
+  currentSection=id;
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  let el=document.getElementById('sec-'+id);
+  if(el) el.classList.add('active');
+  document.querySelectorAll('.sidebar nav button').forEach(b=>b.classList.remove('active'));
+  let nb=document.querySelector(`.sidebar nav button[data-id="${id}"]`);
+  if(nb) nb.classList.add('active');
+  document.querySelector('.sidebar').classList.remove('open');
+  document.querySelector('.ov').classList.remove('show');
+  if(id==='dashboard') renderDashboard();
+  if(id==='progress') renderProgress();
+  window.scrollTo(0,0);
+}
+
+/* ===== RENDER NAV ===== */
+function renderNav(){
+  let nav=document.getElementById('nav');
+  nav.innerHTML=NAV.map(n=>`<button data-id="${n.id}" onclick="navigate('${n.id}')"><span class="ni">${n.icon}</span>${n.label}</button>`).join('');
+}
+
+/* ===== RENDER DASHBOARD ===== */
+function renderDashboard(){
+  let el=document.getElementById('sec-dashboard');
+  let themeIds=Object.keys(THEMES);
+  let overall=getOverallProgress();
+  let s=getState(), ms=s.milestones||{};
+  let msDone=MILESTONES.filter((_,i)=>ms[i]).length;
+
+  el.innerHTML=`
+<div class="dh">
+  <h1>Welcome, Ingebj&oslash;rg</h1>
+  <p><strong>PhD Project:</strong> "Day and Night of Bipolar Disorder" -- Investigating circadian rhythm and sleep disruption in bipolar disorder using actigraphy and ecological momentary assessment data from ~70 patients.</p>
+  <p style="margin-top:.5rem"><strong>Key question:</strong> What is the temporal relationship between circadian/sleep disruption and mood episodes? Does disrupted sleep <em>predict</em> mood change, or does mood change <em>cause</em> sleep disruption -- or both?</p>
+</div>
+<div class="card">
+  <h3>Overall Study Progress</h3>
+  <div class="pb"><div class="fill gold" style="width:${overall}%"></div></div>
+  <div class="pbl">${overall}% complete across all themes</div>
+</div>
+<div class="g3">${themeIds.map(id=>{
+  let t=THEMES[id], rp=getReadProgress(id), qb=getQuizBest(id), fc=getFlashcardsReviewed(id), pct=getThemeProgress(id);
+  let icons={bipolar:'\u2695',actigraphy:'\u231A',circadian:'\u263C',sleep:'\u263E',psychosis:'\u29B0',stats:'\u03A3'};
+  return `<div class="card tc" onclick="navigate('${id}')">
+    <div class="ti">${icons[id]||'\u25CF'}</div>
+    <h3>${t.title}</h3>
+    <div class="pb"><div class="fill" style="width:${pct}%"></div></div>
+    <div class="st">Reading: ${rp.done}/${rp.total} | Quiz best: ${Math.round(qb/t.quiz.length*100)||0}% | Flashcards: ${fc.known}/${fc.total}</div>
+  </div>`;
+}).join('')}</div>
+<div class="g2">
+  <div class="card">
+    <h3>Key Milestones</h3>
+    <div class="ml">${MILESTONES.map((m,i)=>`<label><input type="checkbox" ${ms[i]?'checked':''} onchange="upState(s=>{if(!s.milestones)s.milestones={};s.milestones[${i}]=this.checked;});renderDashboard()"> ${m}</label>`).join('')}</div>
+  </div>
+  <div class="card">
+    <h3>Continue Studying</h3>
+    <p>Your least-progressed area:</p>
+    ${(()=>{
+      let min=Infinity,minId='bipolar';
+      themeIds.forEach(id=>{ let p=getThemeProgress(id); if(p<min){min=p;minId=id;} });
+      return `<p style="margin-top:.5rem"><strong>${THEMES[minId].title}</strong> (${min}% complete)</p>
+      <button class="btn btn-p" style="margin-top:.8rem" onclick="navigate('${minId}')">Go to ${THEMES[minId].title}</button>`;
+    })()}
+  </div>
+</div>`;
+}
+
+/* ===== RENDER THEME SECTIONS ===== */
+function renderThemeSections(){
+  let main=document.getElementById('main');
+  // Dashboard
+  main.innerHTML='<div class="sec active" id="sec-dashboard"></div>';
+
+  // Theme sections
+  Object.keys(THEMES).forEach(id=>{
+    let t=THEMES[id];
+    let div=document.createElement('div');
+    div.className='sec';
+    div.id='sec-'+id;
+    div.innerHTML=`
+<h2 class="sec-t">${t.title}</h2>
+<p class="sec-st">${t.subtitle}</p>
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('${id}','learn',this)">Learn</button>
+  <button class="tab-btn" onclick="switchTab('${id}','reading',this)">Reading List</button>
+  <button class="tab-btn" onclick="switchTab('${id}','flashcards',this)">Flashcards</button>
+  <button class="tab-btn" onclick="switchTab('${id}','quiz',this)">Quiz</button>
+</div>
+<div class="tp active" id="tp-${id}-learn"><div class="card"><div class="lc">${t.learn}</div></div></div>
+<div class="tp" id="tp-${id}-reading"><div class="card" id="rl-${id}"></div></div>
+<div class="tp" id="tp-${id}-flashcards"><div class="card" id="fc-${id}"></div></div>
+<div class="tp" id="tp-${id}-quiz"><div class="card" id="qz-${id}"></div></div>`;
+    main.appendChild(div);
+  });
+
+  // Toolkit
+  let tk=document.createElement('div');
+  tk.className='sec';tk.id='sec-toolkit';
+  tk.innerHTML=renderToolkit();
+  main.appendChild(tk);
+
+  // Progress
+  let pg=document.createElement('div');
+  pg.className='sec';pg.id='sec-progress';
+  main.appendChild(pg);
+
+  // Render sub-components
+  Object.keys(THEMES).forEach(id=>{
+    renderReadingList(id);
+    renderFlashcards(id);
+    renderQuiz(id);
+  });
+}
+
+function switchTab(themeId,tab,btn){
+  let sec=document.getElementById('sec-'+themeId);
+  sec.querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));
+  sec.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tp-'+themeId+'-'+tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ===== READING LIST ===== */
+function renderReadingList(id){
+  let t=THEMES[id], el=document.getElementById('rl-'+id);
+  let s=getState(), r=s.read||{};
+  let rp=getReadProgress(id);
+  el.innerHTML=`<h3>Reading List</h3>
+  <div class="pb"><div class="fill" style="width:${rp.total?rp.done/rp.total*100:0}%"></div></div>
+  <div class="pbl">${rp.done} of ${rp.total} articles read</div>
+  <div style="margin-top:1rem">${t.readings.map(rd=>`<div class="ri">
+    <input type="checkbox" id="rd-${rd.id}" ${r[rd.id]?'checked':''} onchange="upState(s=>{if(!s.read)s.read={};s.read['${rd.id}']=this.checked;});renderReadingList('${id}')">
+    <label for="rd-${rd.id}"><span class="rt">${rd.ref}</span><span class="rd">${rd.desc}</span></label>
+  </div>`).join('')}</div>`;
+}
+
+/* ===== FLASHCARDS ===== */
+let fcState={};
+function renderFlashcards(id){
+  if(!fcState[id]) fcState[id]={idx:0,flipped:false};
+  let t=THEMES[id], el=document.getElementById('fc-'+id);
+  let st=fcState[id], cards=t.flashcards, c=cards[st.idx];
+  let s=getState(), f=s.fc||{};
+  let fkey=id+'_'+st.idx;
+  let status=f[fkey]||'unreviewed';
+  let fc_info=getFlashcardsReviewed(id);
+
+  el.innerHTML=`<h3>Flashcards</h3>
+  <div class="pbl">${fc_info.known} of ${fc_info.total} marked as known</div>
+  <div class="fc-c">
+    <div class="fc ${st.flipped?'flipped':''}" onclick="fcState['${id}'].flipped=!fcState['${id}'].flipped;renderFlashcards('${id}')">
+      <div class="fc-i">
+        <div class="fc-f"><h4>${c.front}</h4><div class="fh">Click to flip</div></div>
+        <div class="fc-b"><p>${c.back}</p></div>
+      </div>
+    </div>
+    <div class="fc-n">
+      <button onclick="fcNav('${id}',-1)" ${st.idx===0?'disabled':''}>Prev</button>
+      <span class="fc-ct">${st.idx+1} / ${cards.length}</span>
+      <button onclick="fcNav('${id}',1)" ${st.idx===cards.length-1?'disabled':''}>Next</button>
+    </div>
+    <div class="fc-m">
+      <button class="btn-k ${status==='known'?'style=\"opacity:.5\"':''}" onclick="fcMark('${id}','known')">Known</button>
+      <button class="btn-u ${status==='unknown'?'style=\"opacity:.5\"':''}" onclick="fcMark('${id}','unknown')">Still Learning</button>
+    </div>
+    <div class="pbl" style="margin-top:.3rem">Status: ${status}</div>
+  </div>`;
+}
+function fcNav(id,dir){
+  fcState[id].idx+=dir;
+  fcState[id].flipped=false;
+  renderFlashcards(id);
+}
+function fcMark(id,mark){
+  let idx=fcState[id].idx;
+  upState(s=>{if(!s.fc)s.fc={};s.fc[id+'_'+idx]=mark;});
+  renderFlashcards(id);
+}
+
+/* ===== QUIZ ===== */
+let quizState={};
+function renderQuiz(id){
+  let t=THEMES[id], el=document.getElementById('qz-'+id);
+  if(!quizState[id]) quizState[id]={answers:{},submitted:false};
+  let qs=quizState[id];
+  let best=getQuizBest(id);
+
+  let html=`<h3>Quiz</h3>`;
+  if(best>0) html+=`<div class="pbl">Best score: ${best}/${t.quiz.length} (${Math.round(best/t.quiz.length*100)}%)</div>`;
+  html+=`<div style="margin-top:1rem">`;
+  t.quiz.forEach((q,qi)=>{
+    html+=`<div class="qq"><h4>${qi+1}. ${q.q}</h4>`;
+    q.opts.forEach((o,oi)=>{
+      let cls='qo';
+      if(qs.submitted){
+        cls+=' dis';
+        if(oi===q.correct) cls+=' ok';
+        else if(qs.answers[qi]===oi) cls+=' wr';
+      } else {
+        if(qs.answers[qi]===oi) cls+=' sel';
+      }
+      html+=`<div class="${cls}" onclick="quizSelect('${id}',${qi},${oi})">${String.fromCharCode(65+oi)}. ${o}</div>`;
+    });
+    if(qs.submitted) html+=`<div class="qx show">${q.expl}</div>`;
+    html+=`</div>`;
+  });
+  html+=`</div><div class="qa">`;
+  if(!qs.submitted){
+    html+=`<button class="btn btn-p" onclick="quizSubmit('${id}')">Submit</button>`;
+  } else {
+    let score=0;
+    t.quiz.forEach((q,qi)=>{ if(qs.answers[qi]===q.correct) score++; });
+    html+=`<span class="qs">Score: ${score}/${t.quiz.length} (${Math.round(score/t.quiz.length*100)}%)</span>`;
+    html+=`<button class="btn btn-o" onclick="quizReset('${id}')">Retake</button>`;
+  }
+  html+=`</div>`;
+  el.innerHTML=html;
+}
+function quizSelect(id,qi,oi){
+  if(quizState[id].submitted) return;
+  quizState[id].answers[qi]=oi;
+  renderQuiz(id);
+}
+function quizSubmit(id){
+  quizState[id].submitted=true;
+  let t=THEMES[id], score=0;
+  t.quiz.forEach((q,qi)=>{ if(quizState[id].answers[qi]===q.correct) score++; });
+  upState(s=>{if(!s.quiz)s.quiz={};if(!s.quiz[id]||score>s.quiz[id])s.quiz[id]=score;});
+  renderQuiz(id);
+}
+function quizReset(id){
+  quizState[id]={answers:{},submitted:false};
+  renderQuiz(id);
+}
+
+/* ===== TOOLKIT ===== */
+function renderToolkit(){
+  return `
+<h2 class="sec-t">Data Analysis Toolkit</h2>
+<p class="sec-st">A practical step-by-step guide for analyzing YOUR specific PhD data</p>
+
+<div class="card sc">
+<h3><span class="sn">Step 1:</span> Understanding Your Data</h3>
+<p><strong>Actigraphy:</strong> Continuous acceleration data from wrist-worn devices (e.g., GENEActiv or Axivity AX3) worn over several months by approximately 70 bipolar disorder patients. Raw data consists of tri-axial acceleration sampled at 25-100 Hz.</p>
+<p><strong>EMA (Ecological Momentary Assessment):</strong> App-based self-report questionnaires completed by participants at mixed frequencies -- some items daily, some weekly, some every 2-3 weeks. These capture subjective mood, energy, sleep quality, functioning, and clinical symptoms.</p>
+<p><strong>Both sources require substantial preprocessing before analysis.</strong> The challenge is aligning these data streams, which operate at different temporal resolutions, into analyzable datasets.</p>
+</div>
+
+<div class="card sc">
+<h3><span class="sn">Step 2:</span> Actigraphy Processing with GGIR</h3>
+<div class="cb">install.packages("GGIR")
+library(GGIR)
+GGIR(datadir = "/path/to/raw/data",
+     outputdir = "/path/to/output",
+     mode = c(1, 2, 3, 4, 5),
+     overwrite = FALSE)</div>
+<p><strong>GGIR pipeline has 5 parts:</strong></p>
+<p><strong>Part 1:</strong> Data loading + auto-calibration (using gravity as reference to correct sensor drift) + metric extraction (ENMO = Euclidean Norm Minus One, in millig).</p>
+<p><strong>Part 2:</strong> Detection of waking hours and classification of sustained inactive bouts.</p>
+<p><strong>Part 3:</strong> Sleep detection using the angle-change algorithm (sustained periods of low wrist angle change = sleep).</p>
+<p><strong>Part 4:</strong> Labeling time windows and computing non-parametric circadian variables: L5 onset/value, M10 onset/value, IS, IV, RA.</p>
+<p><strong>Part 5:</strong> Combining all parts and generating person-level summary files.</p>
+<p><strong>Key outputs:</strong> Daily sleep summary (TST, WASO, SE, SOL, SRI), daily/multi-day circadian metrics (IS, IV, L5, M10, RA).</p>
+<p><strong>Quality control:</strong> Check non-wear detection results, calibration error reports, flag implausible values (e.g., TST > 14h or < 2h, SE > 100%).</p>
+</div>
+
+<div class="card sc">
+<h3><span class="sn">Step 3:</span> EMA Data Preparation</h3>
+<p><strong>Daily items:</strong> Mood ratings (e.g., 1-7 scales for happy/sad), energy level, subjective sleep quality, hours slept (self-report).</p>
+<p><strong>Weekly items:</strong> Functioning assessments, more detailed symptom questionnaires (e.g., ASRM for mania, PHQ for depression).</p>
+<p><strong>Biweekly items:</strong> Potentially more comprehensive clinical ratings or validated instruments.</p>
+<p><strong>Action:</strong> Create time-stamped, cleaned datasets for each frequency level. Handle response timing (when was the EMA actually completed vs when was it scheduled?). Calculate compliance rates per participant.</p>
+</div>
+
+<div class="card sc">
+<h3><span class="sn">Step 4:</span> Data Alignment -- The Core Challenge</h3>
+<p><strong>Strategy A (Recommended starting point):</strong> Create three parallel analysis datasets:</p>
+<p style="padding-left:1rem">1. <strong>Daily dataset:</strong> Daily actigraphy metrics + daily EMA items (direct pairing)<br>
+2. <strong>Weekly dataset:</strong> Aggregated (mean, SD, min, max) daily actigraphy metrics for each week + weekly EMA items<br>
+3. <strong>Biweekly dataset:</strong> Aggregated daily actigraphy over 2-week windows + biweekly EMA items</p>
+<p><strong>Strategy B (Advanced):</strong> Latent variable models where indicators measured at different time scales load onto latent constructs at a common time scale.</p>
+<p><strong>Strategy C (Most sophisticated):</strong> Continuous-time models (e.g., continuous-time SEM) that handle irregular measurement occasions naturally, without requiring data aggregation.</p>
+<p>Start with Strategy A; it is transparent and interpretable. Move to B or C if research questions demand it.</p>
+</div>
+
+<div class="card sc">
+<h3><span class="sn">Step 5:</span> Descriptive Analysis (Paper 1 territory)</h3>
+<p>Before any dynamic modeling, thoroughly describe your data:</p>
+<p><strong>1. Circadian profiles across mood states:</strong> Compare IS, IV, RA, L5, M10, sleep metrics during euthymia vs depression vs (hypo)mania.</p>
+<p><strong>2. Individual trajectories:</strong> Spaghetti plots showing each participant's daily sleep/activity metrics over time. Are there visible patterns before mood shifts?</p>
+<p><strong>3. ICCs (Intraclass Correlations):</strong> How much variation in each variable is between-person vs within-person? High ICC = mostly trait differences. Low ICC = mostly state fluctuations. This determines which statistical approach is most appropriate.</p>
+<div class="cb"># Example in R with lme4:
+library(lme4)
+m0 <- lmer(sleep_efficiency ~ 1 + (1|participant_id), data = daily_data)
+# ICC = between-person variance / total variance
+icc <- VarCorr(m0)$participant_id[1] / (VarCorr(m0)$participant_id[1] + sigma(m0)^2)</div>
+<p><strong>4. Heat maps:</strong> Participant x time for key variables (e.g., sleep efficiency, RA) with color coding.</p>
+</div>
+
+<div class="card sc">
+<h3><span class="sn">Step 6:</span> Temporal Dynamics (Paper 2 territory)</h3>
+<p><strong>Primary analysis: RI-CLPM</strong></p>
+<p>Apply the Random Intercept Cross-Lagged Panel Model to test directionality between circadian/sleep metrics and mood at the daily level.</p>
+<div class="cb"># Conceptual RI-CLPM in lavaan:
+library(lavaan)
+model <- '
+  # Random intercepts
+  RI_sleep =~ 1*sleep_t1 + 1*sleep_t2 + 1*sleep_t3 + ...
+  RI_mood  =~ 1*mood_t1 + 1*mood_t2 + 1*mood_t3 + ...
+  # Within-person centered variables
+  ws1 =~ 1*sleep_t1; ws2 =~ 1*sleep_t2; ...
+  wm1 =~ 1*mood_t1;  wm2 =~ 1*mood_t2; ...
+  # Autoregressive and cross-lagged paths (within-person)
+  ws2 ~ ws1 + wm1
+  wm2 ~ wm1 + ws1
+  ...
+'</div>
+<p><strong>Key questions:</strong> Does disrupted sleep predict next-day mood? Does mood predict next-night sleep? Are effects symmetric or asymmetric?</p>
+<p><strong>Alternative: DSEM in Mplus</strong> for more flexible modeling of individual dynamics, especially with many time points.</p>
+</div>
+
+<div class="card sc">
+<h3><span class="sn">Step 7:</span> Individual Patterns (Paper 3 territory)</h3>
+<p><strong>Idiographic VAR models:</strong> For participants with sufficient data points (>50-60 daily observations), estimate person-specific VAR networks showing how sleep, activity, and mood variables influence each other.</p>
+<div class="cb"># Multilevel VAR in R:
+library(mlVAR)
+result <- mlVAR(data = daily_data,
+                vars = c("sleep_eff", "RA", "mood", "energy"),
+                idvar = "participant_id",
+                lags = 1,
+                temporal = "correlated")</div>
+<p><strong>Latent class / profile analysis:</strong> Are there subgroups of patients with different circadian-mood dynamics? (e.g., "sleep-sensitive" vs "rhythm-sensitive" subgroups)</p>
+<p><strong>Prediction:</strong> Can circadian signatures predict who will have mood episodes? Use early actigraphy data to predict subsequent mood events.</p>
+</div>
+
+<div class="card sc">
+<h3><span class="sn">Step 8:</span> Software and Tools</h3>
+<p><strong>R packages:</strong></p>
+<p style="padding-left:1rem">GGIR (actigraphy processing) | lme4/nlme (multilevel models) | lavaan (SEM/RI-CLPM) | brms (Bayesian multilevel) | MplusAutomation (R interface to Mplus) | mlVAR (multilevel VAR) | graphicalVAR (individual VAR) | mice (multiple imputation) | ggplot2 (visualization)</p>
+<p><strong>Mplus:</strong> For DSEM analyses (called from R via MplusAutomation for reproducibility).</p>
+<p><strong>Reproducibility:</strong> Use R Markdown or Quarto for the entire analysis pipeline. Version control with Git.</p>
+</div>
+
+<div class="card" style="border-left:3px solid var(--gd)">
+<h3>Key Questions to Ask Yourself Throughout</h3>
+<div class="kq">What is my ICC for each key variable? (Determines how much within-person variation exists to model)</div>
+<div class="kq">How many valid actigraphy days does each participant have? (Determines which analyses are possible)</div>
+<div class="kq">Is missingness related to mood state? (If patients remove devices during episodes, data is MNAR)</div>
+<div class="kq">What lag makes substantive sense? (Day-to-day for daily data? Week-to-week for weekly?)</div>
+<div class="kq">Am I answering a between-person or within-person question? (Always be explicit about this)</div>
+<div class="kq">Have I checked model assumptions? (Stationarity for VAR, normality of residuals, etc.)</div>
+</div>`;
+}
+
+/* ===== PROGRESS PAGE ===== */
+function renderProgress(){
+  let el=document.getElementById('sec-progress');
+  let themeIds=Object.keys(THEMES);
+  let totalRead=0,totalReadMax=0,totalQuiz=0,totalQuizMax=0,totalFC=0,totalFCMax=0;
+  themeIds.forEach(id=>{
+    let rp=getReadProgress(id);totalRead+=rp.done;totalReadMax+=rp.total;
+    let t=THEMES[id];totalQuizMax+=t.quiz.length;totalQuiz+=getQuizBest(id);
+    let fc=getFlashcardsReviewed(id);totalFC+=fc.known;totalFCMax+=fc.total;
+  });
+  let overall=getOverallProgress();
+
+  el.innerHTML=`
+<h2 class="sec-t">Progress Overview</h2>
+<p class="sec-st">Track your preparation across all themes</p>
+<div class="g3">
+  <div class="card ss"><div class="num">${totalRead}/${totalReadMax}</div><div class="lbl">Articles Read</div></div>
+  <div class="card ss"><div class="num">${totalQuizMax?Math.round(totalQuiz/totalQuizMax*100):0}%</div><div class="lbl">Average Quiz Score (best attempts)</div></div>
+  <div class="card ss"><div class="num">${totalFC}/${totalFCMax}</div><div class="lbl">Flashcards Mastered</div></div>
+</div>
+<div class="card">
+  <h3>Overall Progress</h3>
+  <div class="pb"><div class="fill gold" style="width:${overall}%"></div></div>
+  <div class="pbl">${overall}% complete</div>
+</div>
+<div class="card">
+  <h3>Per-Theme Breakdown</h3>
+  ${themeIds.map(id=>{
+    let t=THEMES[id],rp=getReadProgress(id),qb=getQuizBest(id),fc=getFlashcardsReviewed(id),pct=getThemeProgress(id);
+    return `<div class="ptr">
+      <div class="ptn">${t.title}</div>
+      <div class="ptb">
+        <div class="pm"><span style="width:70px">Reading</span><div class="pb"><div class="fill" style="width:${rp.total?rp.done/rp.total*100:0}%"></div></div><span>${rp.done}/${rp.total}</span></div>
+        <div class="pm"><span style="width:70px">Quiz</span><div class="pb"><div class="fill" style="width:${t.quiz.length?qb/t.quiz.length*100:0}%"></div></div><span>${qb}/${t.quiz.length}</span></div>
+        <div class="pm"><span style="width:70px">Flashcards</span><div class="pb"><div class="fill" style="width:${fc.total?fc.known/fc.total*100:0}%"></div></div><span>${fc.known}/${fc.total}</span></div>
+        <div class="pm"><span style="width:70px">Overall</span><div class="pb"><div class="fill gold" style="width:${pct}%"></div></div><span>${pct}%</span></div>
+      </div>
+    </div>`;
+  }).join('')}
+</div>
+<div class="card">
+  <h3>Suggestions</h3>
+  <p>Focus on your least-progressed areas:</p>
+  <ul style="margin-top:.5rem;padding-left:1.5rem">${
+    themeIds.map(id=>({id,pct:getThemeProgress(id),title:THEMES[id].title}))
+      .sort((a,b)=>a.pct-b.pct)
+      .slice(0,3)
+      .map(x=>`<li style="margin:.3rem 0;color:var(--t2)"><strong>${x.title}</strong> (${x.pct}%) -- <a href="#" onclick="navigate('${x.id}');return false">Study now</a></li>`)
+      .join('')
+  }</ul>
+</div>`;
+}
+
+/* ===== INIT ===== */
+document.addEventListener('DOMContentLoaded',function(){
+  renderNav();
+  renderThemeSections();
+  renderDashboard();
+  navigate('dashboard');
+});
+</script>
+</body>
+</html>
