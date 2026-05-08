@@ -139,7 +139,8 @@ const NAV=[
 {id:'psychosis',icon:'\u29B0',label:'Psychosis'},
 {id:'stats',icon:'\u03A3',label:'Statistics & Methods'},
 {id:'toolkit',icon:'\u2692',label:'Data Analysis Toolkit'},
-{id:'progress',icon:'\u2713',label:'Progress'}
+{id:'progress',icon:'\u2713',label:'Progress'},
+{id:'stillingen',icon:'\u2318',label:'Stillingen'}
 ];
 
 const THEMES={
@@ -711,6 +712,12 @@ function renderThemeSections(){
   pg.className='sec';pg.id='sec-progress';
   main.appendChild(pg);
 
+  // Stillingen
+  let sl=document.createElement('div');
+  sl.className='sec';sl.id='sec-stillingen';
+  sl.innerHTML=renderStillingen();
+  main.appendChild(sl);
+
   // Render sub-components
   Object.keys(THEMES).forEach(id=>{
     renderReadingList(id);
@@ -838,6 +845,107 @@ function quizSubmit(id){
 function quizReset(id){
   quizState[id]={answers:{},submitted:false};
   renderQuiz(id);
+}
+
+/* ===== STILLINGEN ===== */
+function renderStillingen(){
+  return `
+<h2 class="sec-t">Stillingen</h2>
+<p class="sec-st">Utlysningen, klinisk kontekst og Nydalen DPS</p>
+
+<h3>Stillingsutlysning</h3>
+<div class="card sc">
+  <strong>Tittel:</strong> Stipendiat (PhD Fellow)<br>
+  <strong>Arbeidsgiver:</strong> Oslo universitetssykehus HF<br>
+  <strong>Sted:</strong> Kirkeveien 166, 0455 Oslo<br>
+  <strong>Stillingsprosent:</strong> 100 %<br>
+  <strong>Periode:</strong> 1. august 2026 &ndash; 31. juli 2029<br>
+  <strong>S&oslash;knadsfrist:</strong> 8. mars 2026<br>
+  <strong>Kontakt:</strong> Trine Vik Lagerberg &mdash; uxlagt@ous-hf.no
+</div>
+
+<h3>Prosjektbeskrivelse</h3>
+<p>Stillingen er tilknyttet <strong>Seksjon for klinisk psykoseforskning</strong>, som driver klinisk orientert forskning p&aring; psykotiske lidelser inkludert bipolar lidelse. M&aring;let er &aring; bedre behandlingsresultater gjennom utforsking av sykdomsmekanismer, risikofaktorer og nye intervensjoner.</p>
+<div class="card sc">
+  <strong>Prosjekttittel: &ldquo;The night and day of bipolar disorder&rdquo;</strong>
+  <p style="margin-top:.5rem">Prosjektet er en 3-&aring;rig studie som unders&oslash;ker hvordan forstyrrelser i sirkadianrytmen henger sammen med livsstil, hum&oslash;rvariasjoner og risiko for nye sykdomsepisoder hos personer tidlig i sykdomsforl&oslash;pet av bipolar lidelse &mdash; ved bruk av aktigrafi og app-basert EMA.</p>
+</div>
+
+<h3>Arbeidsoppgaver</h3>
+<div class="card">
+  <ul>
+    <li>Behandle og kvalitetssikre aktigrafi- og kliniske data</li>
+    <li>Analysere data i samarbeid med statistikere</li>
+    <li>Gjennomf&oslash;re praktisk forskningsarbeid inkludert kliniske intervjuer og datainnsamling</li>
+    <li>Publisere funn i internasjonale tidsskrifter</li>
+  </ul>
+</div>
+
+<h3>Kvalifikasjonskrav</h3>
+<div class="g2">
+  <div class="card">
+    <strong>Utdanning og faglige krav</strong>
+    <ul style="margin-top:.5rem">
+      <li>Mastergrad i psykologi, medisin eller nevrovitenskap</li>
+      <li>Flytende skandinavisk spr&aring;k (muntlig og skriftlig)</li>
+      <li>Gode engelskkunnskaper</li>
+      <li>Interesse for avanserte statistiske metoder; R-programmeringserfaring foretrukket</li>
+      <li>Interesse for digitale verkt&oslash;y innen psykisk helsevern</li>
+      <li>Klinisk erfaring &oslash;nsket</li>
+    </ul>
+  </div>
+  <div class="card">
+    <strong>Personlige egenskaper</strong>
+    <ul style="margin-top:.5rem">
+      <li>Analytisk og strukturert</li>
+      <li>Selvdreven og initiativrik</li>
+      <li>Gode samarbeids- og kommunikasjonsevner</li>
+      <li>Ansvarsfull og l&oslash;sningsorientert tiln&aelig;rming</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Allmennpsykiatrisk poliklinikk, Nydalen DPS</h3>
+<p>Pasientrekruttering til prosjektet skjer gjennom <strong>Bipolarteamet ved Nydalen DPS</strong>. Nydalen DPS er et distriktspsykiatrisk senter som blant annet driver <strong>Allmennpsykiatrisk poliklinikk</strong>.</p>
+<div class="card">
+  <strong>Adresse:</strong> Gullhaugveien 12, 0484 Oslo<br>
+  <strong>Telefon:</strong> 23 02 33 00 (mandag&ndash;fredag 08.00&ndash;15.30)<br>
+  <strong>Opptaksmr&aring;de:</strong> Bydelene Sagene, Bjerke og Nordre Aker
+</div>
+<p>Poliklinikken tilbyr utredning og behandling til voksne over 18 &aring;r med moderate til alvorlige psykiske lidelser som krever spesialisthelsetjeneste.</p>
+
+<h3>Bipolar lidelse &mdash; behandling ved OUS</h3>
+<div class="g2">
+  <div class="card">
+    <strong>Medikamentell behandling</strong>
+    <ul style="margin-top:.5rem">
+      <li>Litium: hyppig brukt, krever n&oslash;ye dosering og blodpr&oslash;vetaking</li>
+      <li>Antipsykotika: brukes ved maniske faser</li>
+      <li>Stemningstabiliserende midler: ofte ved depressive episoder</li>
+    </ul>
+  </div>
+  <div class="card">
+    <strong>Psykologiske tiln&aelig;rminger</strong>
+    <ul style="margin-top:.5rem">
+      <li>Psykoedukasjon om lidelsen og mestring</li>
+      <li>Interpersonlig sosial rytmeterapi (IPSRT)</li>
+      <li>Kognitiv atferdsterapi (KAT)</li>
+      <li>Familiebasert behandling</li>
+    </ul>
+  </div>
+</div>
+<div class="card sc">
+  <strong>Klinisk relevans for prosjektet:</strong> Behandlingstilbudet ved Nydalen DPS inkluderer eksplisitt s&oslash;vnintervensjoner og sirkadianstabilisering som del av bipolaromsorgen. Prosjektet &ldquo;The night and day of bipolar disorder&rdquo; springer direkte ut av dette kliniske milj&oslash;et &mdash; og funn fra forskningen kan direkte informere og forbedre det eksisterende behandlingstilbudet.
+</div>
+
+<h3>Nyttige lenker</h3>
+<div class="card">
+  <ul>
+    <li><a href="https://www.oslo-universitetssykehus.no/behandlinger/bipolar-lidelse/" target="_blank" rel="noopener">OUS: Bipolar lidelse &mdash; behandlingsoversikt</a></li>
+    <li><a href="https://www.oslo-universitetssykehus.no/avdelinger/klinikk-psykisk-helse-og-avhengighet/nydalen-dps/allmennpsykiatrisk-poliklinikk-nydalen-dps/" target="_blank" rel="noopener">Allmennpsykiatrisk poliklinikk, Nydalen DPS</a></li>
+    <li><a href="https://2411.webcruiter.no/Main2/Recruit/Public/5078342340?language=nb&link_source_id=2000&showexpired=true" target="_blank" rel="noopener">Stillingsannonsen (WebCruiter)</a></li>
+  </ul>
+</div>`;
 }
 
 /* ===== TOOLKIT ===== */
