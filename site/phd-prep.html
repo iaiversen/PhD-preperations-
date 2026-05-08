@@ -140,7 +140,8 @@ const NAV=[
 {id:'stats',icon:'\u03A3',label:'Statistics & Methods'},
 {id:'toolkit',icon:'\u2692',label:'Data Analysis Toolkit'},
 {id:'progress',icon:'\u2713',label:'Progress'},
-{id:'stillingen',icon:'\u2318',label:'Stillingen'}
+{id:'stillingen',icon:'\u2318',label:'Stillingen'},
+{id:'notater',icon:'\u270D',label:'Notater'}
 ];
 
 const THEMES={
@@ -617,6 +618,7 @@ function navigate(id){
   document.querySelector('.ov').classList.remove('show');
   if(id==='dashboard') renderDashboard();
   if(id==='progress') renderProgress();
+  if(id==='notater') renderNoteList();
   window.scrollTo(0,0);
 }
 
@@ -717,6 +719,12 @@ function renderThemeSections(){
   sl.className='sec';sl.id='sec-stillingen';
   sl.innerHTML=renderStillingen();
   main.appendChild(sl);
+
+  // Notater
+  let nt=document.createElement('div');
+  nt.className='sec';nt.id='sec-notater';
+  nt.innerHTML=renderNotater();
+  main.appendChild(nt);
 
   // Render sub-components
   Object.keys(THEMES).forEach(id=>{
@@ -845,6 +853,61 @@ function quizSubmit(id){
 function quizReset(id){
   quizState[id]={answers:{},submitted:false};
   renderQuiz(id);
+}
+
+/* ===== NOTATER ===== */
+function renderNotater(){
+  return `
+<h2 class="sec-t">Notater</h2>
+<p class="sec-st">Skriv ned spørsmål og tanker underveis</p>
+<div class="card">
+  <div style="display:flex;gap:.6rem;align-items:flex-start">
+    <textarea id="note-input" placeholder="Skriv et notat eller spørsmål... (Ctrl+Enter for å legge til)" onkeydown="if(event.ctrlKey&&event.key==='Enter'){addNote();event.preventDefault();}" style="flex:1;min-height:80px;padding:.7rem;border:1px solid var(--brd);border-radius:6px;font-family:var(--f);font-size:.9rem;background:var(--card);color:var(--t1);resize:vertical;line-height:1.5"></textarea>
+    <button onclick="addNote()" style="padding:.7rem 1.2rem;background:var(--ac);color:#fff;border:none;border-radius:6px;cursor:pointer;font-family:var(--f);font-size:.9rem;white-space:nowrap;align-self:flex-end">Legg til</button>
+  </div>
+</div>
+<div id="note-list"></div>
+<div id="note-empty" style="color:var(--t2);font-size:.9rem;padding:.5rem 0">Ingen notater ennå.</div>`;
+}
+
+function loadNotes(){return JSON.parse(localStorage.getItem('phd-notes')||'[]');}
+function saveNotes(notes){localStorage.setItem('phd-notes',JSON.stringify(notes));}
+
+function renderNoteList(){
+  let notes=loadNotes();
+  let list=document.getElementById('note-list');
+  let empty=document.getElementById('note-empty');
+  if(!list) return;
+  if(notes.length===0){list.innerHTML='';empty.style.display='block';return;}
+  empty.style.display='none';
+  list.innerHTML=notes.map((n,i)=>`
+<div class="card" style="display:flex;gap:1rem;align-items:flex-start">
+  <div style="flex:1">
+    <div style="font-size:.78rem;color:var(--t2);margin-bottom:.3rem">${n.ts}</div>
+    <div style="white-space:pre-wrap;line-height:1.6">${n.text.replace(/</g,'&lt;')}</div>
+  </div>
+  <button onclick="deleteNote(${i})" title="Slett" style="background:none;border:none;color:var(--t2);cursor:pointer;font-size:1.1rem;padding:.2rem .4rem;flex-shrink:0">&times;</button>
+</div>`).join('');
+}
+
+function addNote(){
+  let input=document.getElementById('note-input');
+  let text=(input.value||'').trim();
+  if(!text) return;
+  let notes=loadNotes();
+  let now=new Date();
+  let ts=now.toLocaleDateString('nb-NO',{day:'2-digit',month:'short',year:'numeric'})+' '+now.toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit'});
+  notes.unshift({text,ts});
+  saveNotes(notes);
+  input.value='';
+  renderNoteList();
+}
+
+function deleteNote(i){
+  let notes=loadNotes();
+  notes.splice(i,1);
+  saveNotes(notes);
+  renderNoteList();
 }
 
 /* ===== STILLINGEN ===== */
